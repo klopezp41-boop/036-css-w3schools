@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Fondos en CSS (Backgrounds)</title>
+<style>
+.demo-color h1 { background-color: green; color:white; }
+.demo-color div { background-color: lightblue; padding:10px; }
+.demo-color p { background-color: yellow; }
+
+.demo-opacidad div { background-color: green; padding:15px; margin-bottom:5px; }
+.demo-opacidad div.o1 { opacity: 0.1; }
+.demo-opacidad div.o2 { opacity: 0.3; }
+.demo-opacidad div.o3 { opacity: 0.6; }
+
+.demo-rgba div { padding:15px; margin-bottom:5px; }
+.demo-rgba div.r1 { background: rgba(0, 128, 0, 0.1); }
+.demo-rgba div.r2 { background: rgba(0, 128, 0, 0.3); }
+.demo-rgba div.r3 { background: rgba(0, 128, 0, 0.6); }
+.demo-rgba div.r4 { background: rgb(0, 128, 0); color:white; }
+
+.demo-img-body {
+  background-image: url("https://www.w3schools.com/css/paper.gif");
+  padding: 15px;
+}
+.demo-img-parrafo p {
+  background-image: url("https://www.w3schools.com/css/paper.gif");
+  padding: 10px;
+}
+.demo-img-dificil {
+  background-image: url("https://www.w3schools.com/css/bgdesert.jpg");
+  padding: 15px;
+  color: white;
+}
+
+.demo-repeat-normal {
+  background-image: url("https://www.w3schools.com/css/gradient_bg.png");
+  height: 150px;
+}
+.demo-repeat-x {
+  background-image: url("https://www.w3schools.com/css/gradient_bg.png");
+  background-repeat: repeat-x;
+  height: 150px;
+}
+.demo-no-repeat {
+  background-image: url("https://www.w3schools.com/css/img_tree.png");
+  background-repeat: no-repeat;
+  height: 250px;
+}
+
+.demo-position {
+  background-image: url("https://www.w3schools.com/css/img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  height: 250px;
+  padding-right: 200px;
+}
+
+.demo-fixed {
+  background-image: url("https://www.w3schools.com/css/img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  height: 300px;
+  overflow-y: scroll;
+  padding-right: 200px;
+}
+
+.demo-shorthand {
+  background: #ffffff url("https://www.w3schools.com/css/img_tree.png") no-repeat right top;
+  padding-right: 200px;
+  height: 250px;
+  border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<h2>Propiedades de fondo en CSS</h2>
+<p>Se usan para agregar efectos de fondo a los elementos: background-color, background-image, background-repeat, background-attachment, background-position, y la propiedad abreviada background.</p>
+
+<h2>background-color</h2>
+<p>Especifica el color de fondo de un elemento. Se puede definir con nombre de color, valor HEX o valor RGB.</p>
+
+<h3>Color de fondo en distintos elementos</h3>
+<div class="demo-color">
+  <h1>Ejemplo de background-color</h1>
+  <div>
+    Este es un texto dentro de un div.
+    <p>Este párrafo tiene su propio color de fondo.</p>
+    Seguimos dentro del div.
+  </div>
+</div>
+
+<h2>Opacidad / Transparencia</h2>
+<p>La propiedad opacity va de 0.0 a 1.0. Entre más bajo el valor, más transparente. Nota: afecta también a los elementos hijos (incluido el texto):</p>
+<div class="demo-opacidad">
+  <div class="o1"><h1>opacidad 0.1</h1></div>
+  <div class="o2"><h1>opacidad 0.3</h1></div>
+  <div class="o3"><h1>opacidad 0.6</h1></div>
+  <div><h1>opacidad 1 (por defecto)</h1></div>
+</div>
+
+<h3>Transparencia usando RGBA</h3>
+<p>Si no se quiere que la transparencia afecte al texto, se usa un color RGBA, que aplica la opacidad solo al fondo:</p>
+<div class="demo-rgba">
+  <div class="r1"><h1>10% de opacidad</h1></div>
+  <div class="r2"><h1>30% de opacidad</h1></div>
+  <div class="r3"><h1>60% de opacidad</h1></div>
+  <div class="r4"><h1>por defecto</h1></div>
+</div>
+
+<h2>background-image</h2>
+<p>Especifica una imagen para usar como fondo de un elemento. Por defecto, se repite hasta cubrir todo el elemento.</p>
+<div class="demo-img-body">
+  <h1>¡Hola Mundo!</h1>
+  <p>Esta sección tiene una imagen como fondo.</p>
+</div>
+
+<h3>Mala combinación de texto e imagen de fondo</h3>
+<div class="demo-img-dificil">
+  <h1>¡Hola Mundo!</h1>
+  <p>Este texto no es fácil de leer sobre esta imagen de fondo.</p>
+</div>
+
+<h3>Imagen de fondo en un elemento específico</h3>
+<div class="demo-img-parrafo">
+  <h1>¡Hola Mundo!</h1>
+  <p>Este párrafo tiene una imagen como fondo.</p>
+</div>
+
+<h2>background-repeat</h2>
+<p>Define si y cómo se repite una imagen de fondo. Por defecto se repite en ambas direcciones:</p>
+<div class="demo-repeat-normal">
+  <h1>¡Hola Mundo!</h1>
+  <p>Imagen de fondo repetida en ambas direcciones.</p>
+</div>
+
+<h3>Repetición solo horizontal (repeat-x)</h3>
+<div class="demo-repeat-x">
+  <h1>¡Hola Mundo!</h1>
+  <p>Aquí, la imagen de fondo se repite solo horizontalmente.</p>
+</div>
+
+<h3>Sin repetición (no-repeat)</h3>
+<div class="demo-no-repeat">
+  <h1>¡Hola Mundo!</h1>
+  <p>La imagen de fondo se muestra una sola vez.</p>
+</div>
+
+<h2>background-position</h2>
+<p>Se usa para definir la posición inicial de la imagen de fondo. Por defecto se coloca en la esquina superior izquierda:</p>
+<div class="demo-position">
+  <h1>¡Hola Mundo!</h1>
+  <p>Aquí la imagen de fondo se muestra una sola vez y está posicionada lejos del texto (esquina superior derecha).</p>
+</div>
+
+<h2>background-attachment</h2>
+<p>Especifica si la imagen de fondo se desplaza junto con la página o permanece fija. Prueba a hacer scroll dentro del recuadro:</p>
+<div class="demo-fixed">
+  <h1>Propiedad background-attachment: fixed</h1>
+  <p>La imagen de fondo está fija. Intenta hacer scroll dentro de este recuadro.</p>
+  <p>La imagen de fondo está fija. Intenta hacer scroll dentro de este recuadro.</p>
+  <p>La imagen de fondo está fija. Intenta hacer scroll dentro de este recuadro.</p>
+  <p>La imagen de fondo está fija. Intenta hacer scroll dentro de este recuadro.</p>
+  <p>La imagen de fondo está fija. Intenta hacer scroll dentro de este recuadro.</p>
+</div>
+
+<h2>background (propiedad abreviada)</h2>
+<p>Permite especificar todas las propiedades de fondo en una sola declaración, en vez de escribirlas por separado:</p>
+<pre><code>background: #ffffff url("img_tree.png") no-repeat right top;</code></pre>
+<div class="demo-shorthand">
+  <h1>Propiedad background</h1>
+  <p>Aquí la imagen de fondo se muestra una sola vez, posicionada en la esquina superior derecha, usando la propiedad abreviada.</p>
+</div>
+
+</body>
+</html>
