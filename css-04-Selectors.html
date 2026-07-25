@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Selectores en CSS</title>
+</head>
+<body>
+
+<h2>¿Qué son los selectores CSS?</h2>
+<p>Los selectores CSS se usan para "encontrar" (o seleccionar) los elementos HTML que se quieren estilizar. Se dividen en 5 categorías: selectores simples (nombre, id, clase), selectores combinadores, selectores de pseudo-clase, selectores de pseudo-elemento y selectores de atributo. Aquí veremos los selectores más básicos.</p>
+
+<h2>El selector de elemento</h2>
+<style>
+.demo1 p {
+  text-align: center;
+  color: red;
+}
+</style>
+<p>Selecciona elementos HTML según el nombre de la etiqueta. Aquí, todos los &lt;p&gt; están centrados y en rojo:</p>
+<div class="demo1">
+  <p>Todos los párrafos son afectados por el estilo.</p>
+  <p id="para1">¡Yo también!</p>
+  <p>¡Y yo!</p>
+</div>
+
+<h2>El selector de id</h2>
+<style>
+#parrafo-especial {
+  text-align: center;
+  color: red;
+}
+</style>
+<p>Usa el atributo id de un elemento HTML para seleccionar un elemento específico y único en la página. Se escribe con un símbolo numeral (#) seguido del id:</p>
+<p id="parrafo-especial">¡Hola Mundo!</p>
+<p>Este párrafo no se ve afectado por el estilo.</p>
+<p>Nota: un id no puede empezar con un número.</p>
+
+<h2>El selector de clase</h2>
+<style>
+.centrado {
+  text-align: center;
+  color: red;
+}
+</style>
+<p>Selecciona elementos HTML con un atributo class específico. Se escribe con un punto (.) seguido del nombre de la clase:</p>
+<h1 class="centrado">Encabezado rojo y centrado</h1>
+<p class="centrado">Párrafo rojo y centrado.</p>
+
+<h3>Aplicar una clase a un elemento específico</h3>
+<style>
+p.centrado2 {
+  text-align: center;
+  color: red;
+}
+</style>
+<p>También se puede indicar que solo un tipo de elemento específico se vea afectado por la clase:</p>
+<h1 class="centrado2">Este encabezado no se verá afectado</h1>
+<p class="centrado2">Este párrafo será rojo y estará centrado.</p>
+
+<h3>Elementos con más de una clase</h3>
+<style>
+p.centrado3 {
+  text-align: center;
+  color: red;
+}
+p.grande {
+  font-size: 200%;
+}
+</style>
+<p>Un elemento HTML puede tener más de una clase a la vez:</p>
+<h1 class="centrado3">Este encabezado no se verá afectado</h1>
+<p class="centrado3">Este párrafo será rojo y estará centrado.</p>
+<p class="centrado3 grande">Este párrafo será rojo, centrado y con letra más grande.</p>
+
+</body>
+</html>
