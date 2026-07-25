@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Comentarios en CSS</title>
+<style>
+/* Este es un comentario de una sola línea */
+.demo1 p {
+  color: red;
+}
+
+.demo2 p {
+  color: red; /* Establece el color de texto a rojo */
+}
+
+.demo3 p {
+  color: /*red*/blue;
+}
+
+/* Este es un
+comentario de
+varias líneas */
+.demo4 p {
+  color: red;
+}
+
+.demo5 p {
+  color: red; /* Establece el color de texto a rojo */
+}
+</style>
+</head>
+<body>
+
+<h2>Comentario de una sola línea</h2>
+<p>Los comentarios se usan para explicar el código CSS y ayudan al editarlo más adelante. El navegador los ignora por completo. Se escriben dentro de &lt;style&gt;, empezando con /* y terminando con */.</p>
+<div class="demo1">
+  <p>¡Hola Mundo!</p>
+  <p>Este párrafo tiene estilo CSS.</p>
+</div>
+
+<h3>Comentario al final de una línea</h3>
+<div class="demo2">
+  <p>¡Hola Mundo!</p>
+  <p>Este párrafo tiene estilo CSS.</p>
+</div>
+
+<h3>Comentario en medio de una línea</h3>
+<div class="demo3">
+  <p>¡Hola Mundo!</p>
+  <p>Este párrafo tiene estilo CSS.</p>
+</div>
+
+<h3>Comentario de varias líneas</h3>
+<div class="demo4">
+  <p>¡Hola Mundo!</p>
+  <p>Este párrafo tiene estilo CSS.</p>
+</div>
+
+<h2>Comentarios de HTML y CSS combinados</h2>
+<div class="demo5">
+  <h3>Mi Encabezado</h3>
+  <!-- Estos párrafos serán rojos -->
+  <p>¡Hola Mundo!</p>
+  <p>Este párrafo tiene estilo CSS.</p>
+  <p>Los comentarios de HTML y CSS no se muestran en el resultado.</p>
+</div>
+
+</body>
+</html>
