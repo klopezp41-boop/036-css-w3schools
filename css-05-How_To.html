@@ -28,26 +28,27 @@ h1 {
 <p>Nota importante: no se debe dejar espacio entre el valor de la propiedad y su unidad. Ejemplo incorrecto: <code>margin-left: 20 px;</code> — correcto: <code>margin-left: 20px;</code>.</p>
 
 <h2>CSS interno</h2>
+<p>Se puede usar una hoja de estilos interna cuando una sola página HTML tiene un estilo único. Se define dentro del elemento &lt;style&gt;, en la sección &lt;head&gt; de la página.</p>
 <style>
 .demo-interno {
-  background-color: lightblue;
+  background-color: linen;
   padding: 15px;
 }
 .demo-interno h2 {
-  color: navy;
-  margin-left: 20px;
+  color: maroon;
+  margin-left: 40px;
 }
 </style>
-<p>Se define dentro del elemento &lt;style&gt;, en la sección &lt;head&gt; de la página. Aquí un ejemplo funcionando (aplicado a este bloque):</p>
 <div class="demo-interno">
   <h2>Este es un encabezado</h2>
   <p>Este es un párrafo.</p>
 </div>
 
 <h2>CSS en línea (inline)</h2>
-<p>Se aplica directamente sobre un elemento usando el atributo style:</p>
-<h2 style="color:navy; margin-left:20px;">Este es un encabezado</h2>
-<p style="background-color:lightblue; padding:10px;">Este es un párrafo con estilo en línea.</p>
+<p>Se puede usar un estilo en línea para aplicar un estilo único a un solo elemento. Se agrega el atributo style directamente al elemento, y puede contener cualquier propiedad CSS.</p>
+<h1 style="color:blue; text-align:center;">Este es un encabezado</h1>
+<p style="color:red;">Este es un párrafo.</p>
+<p>Consejo: un estilo en línea pierde muchas de las ventajas de una hoja de estilos (al mezclar el contenido con la presentación), así que se recomienda usarlo con moderación.</p>
 
 </body>
 </html>
