@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Introducción a CSS</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+.demo-header {
+  background-color: #04AA6D;
+  color: white;
+  padding: 20px;
+}
+.demo-header h2 {
+  margin: 0;
+}
+.demo-menu {
+  float: left;
+  width: 20%;
+}
+.demo-menu a {
+  background-color: #eee;
+  padding: 8px;
+  margin-bottom: 7px;
+  display: block;
+  color: black;
+  text-decoration: none;
+  border: 1px solid #ccc;
+}
+.demo-menu a.activo {
+  background-color: #04AA6D;
+  color: white;
+}
+.demo-main {
+  float: left;
+  width: 55%;
+  padding: 0 20px;
+}
+.demo-sidebar {
+  float: left;
+  width: 25%;
+  background-color: #6421f3;
+  color: white;
+  padding: 15px;
+}
+.demo-footer {
+  clear: both;
+  background-color: #f1f1f1;
+  padding: 15px;
+  font-size: 12px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es CSS?</h2>
+<p>CSS es el lenguaje que usamos para darle estilo a una página web:</p>
+<ul>
+  <li>CSS significa Cascading Style Sheets (Hojas de Estilo en Cascada)</li>
+  <li>CSS describe cómo se deben mostrar los elementos HTML en pantalla, papel u otros medios</li>
+  <li>CSS ahorra mucho trabajo, ya que puede controlar el diseño de varias páginas web a la vez</li>
+  <li>Las hojas de estilo externas se guardan en archivos CSS</li>
+</ul>
+
+<h2>Demo de CSS - Una página HTML, múltiples estilos</h2>
+<p>Aquí se muestra cómo una misma página HTML puede verse distinta según la hoja de estilos que se le aplique. En la página original, esto se logra con 4 archivos .css distintos enlazados por separado; en este archivo se muestra el resultado visual de una de esas hojas de estilo, aplicada con clases CSS:</p>
+
+<div class="demo-header">
+  <h2>Bienvenido a Mi Página de Inicio</h2>
+  <p>Usa el menú para seleccionar distintas hojas de estilo</p>
+</div>
+
+<div class="demo-menu">
+  <a href="#" class="activo">Hoja de estilo 1</a>
+  <a href="#">Hoja de estilo 2</a>
+  <a href="#">Hoja de estilo 3</a>
+  <a href="#">Hoja de estilo 4</a>
+  <a href="#">Sin hoja de estilo</a>
+</div>
+
+<div class="demo-main">
+  <h2>Misma Página, Diferentes Hojas de Estilo</h2>
+  <p>Esta es una demostración de cómo distintas hojas de estilo pueden cambiar el diseño de una página HTML.</p>
+  <h3>Sin estilos</h3>
+  <p>Esta página usa elementos DIV para agrupar las distintas secciones. Sin una hoja de estilo aplicada, se vería solo como texto plano, sin colores ni distribución en columnas.</p>
+</div>
+
+<div class="demo-sidebar">
+  <h3>Barra Lateral</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<div class="demo-footer">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+</div>
+
+<h2>¿Por qué usar CSS?</h2>
+<p>CSS se usa para definir estilos en las páginas web, incluyendo el diseño, la distribución y las variaciones de visualización según distintos dispositivos y tamaños de pantalla.</p>
+
+<h2>Primer ejemplo de CSS</h2>
+<style>
+.ejemplo-basico h1 {
+  color: white;
+  text-align: center;
+}
+.ejemplo-basico p {
+  font-family: verdana;
+  font-size: 20px;
+}
+.ejemplo-basico {
+  background-color: lightblue;
+  padding: 20px;
+}
+</style>
+<div class="ejemplo-basico">
+  <h1>Mi Primer Ejemplo de CSS</h1>
+  <p>Este es un párrafo.</p>
+</div>
+
+</body>
+</html>
