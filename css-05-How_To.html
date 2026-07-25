@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Cómo agregar CSS</title>
+</head>
+<body>
+
+<h2>Formas de insertar CSS</h2>
+<p>Existen tres maneras de insertar una hoja de estilos:</p>
+<ul>
+  <li><b>CSS externo</b> - enlazando un archivo .css externo</li>
+  <li><b>CSS interno</b> - usando el elemento &lt;style&gt; en la sección head</li>
+  <li><b>CSS en línea (inline)</b> - usando el atributo style en el elemento HTML</li>
+</ul>
+
+<h2>CSS externo</h2>
+<p>Con una hoja de estilos externa se puede cambiar el aspecto de todo un sitio web modificando un solo archivo. Cada página debe incluir una referencia al archivo .css dentro del elemento &lt;link&gt;, en la sección &lt;head&gt;. Así se vería:</p>
+<pre><code>&lt;link rel="stylesheet" href="mystyle.css"&gt;</code></pre>
+<p>Y el contenido del archivo "mystyle.css" sería algo así (un archivo CSS nunca debe contener etiquetas HTML):</p>
+<pre><code>body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}</code></pre>
+<p>Nota importante: no se debe dejar espacio entre el valor de la propiedad y su unidad. Ejemplo incorrecto: <code>margin-left: 20 px;</code> — correcto: <code>margin-left: 20px;</code>.</p>
+
+<h2>CSS interno</h2>
+<style>
+.demo-interno {
+  background-color: lightblue;
+  padding: 15px;
+}
+.demo-interno h2 {
+  color: navy;
+  margin-left: 20px;
+}
+</style>
+<p>Se define dentro del elemento &lt;style&gt;, en la sección &lt;head&gt; de la página. Aquí un ejemplo funcionando (aplicado a este bloque):</p>
+<div class="demo-interno">
+  <h2>Este es un encabezado</h2>
+  <p>Este es un párrafo.</p>
+</div>
+
+<h2>CSS en línea (inline)</h2>
+<p>Se aplica directamente sobre un elemento usando el atributo style:</p>
+<h2 style="color:navy; margin-left:20px;">Este es un encabezado</h2>
+<p style="background-color:lightblue; padding:10px;">Este es un párrafo con estilo en línea.</p>
+
+</body>
+</html>
