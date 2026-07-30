@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Contorno en CSS (Outline)</title>
+<style>
+/* --- Ejemplo básico --- */
+.demo-basico {
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* --- outline-style --- */
+.demo-estilo p {
+  outline-color: green;
+  padding: 5px;
+  margin: 10px 0;
+}
+.demo-estilo p.dotted {outline-style: dotted;}
+.demo-estilo p.dashed {outline-style: dashed;}
+.demo-estilo p.solid {outline-style: solid;}
+.demo-estilo p.double {outline-style: double;}
+.demo-estilo p.groove {outline-style: groove;}
+.demo-estilo p.ridge {outline-style: ridge;}
+
+/* --- outline-width --- */
+.demo-ancho p {
+  padding: 5px;
+  outline-style: solid;
+  outline-color: green;
+  margin: 10px 0;
+}
+.demo-ancho p.ex1 { outline-width: thin; }
+.demo-ancho p.ex2 { outline-width: medium; }
+.demo-ancho p.ex3 { outline-width: thick; }
+.demo-ancho p.ex4 { outline-width: 8px; }
+
+/* --- outline-color --- */
+.demo-color p {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px 0;
+}
+.demo-color p.ex1 { outline-style: solid; outline-color: red; }
+.demo-color p.ex2 { outline-style: dotted; outline-color: blue; }
+.demo-color p.ex3 { outline-style: outset; outline-color: green; }
+.demo-color p.ex4 { outline-style: solid; outline-color: invert; }
+
+.demo-hex p {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px 0;
+}
+.demo-hex p.ex1 { outline-style: solid; outline-color: #ff0000; }
+.demo-hex p.ex2 { outline-style: dotted; outline-color: #0000ff; }
+.demo-hex p.ex3 { outline-style: solid; outline-color: #bbbbbb; }
+
+.demo-rgb p {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px 0;
+}
+.demo-rgb p.ex1 { outline-style: solid; outline-color: rgb(255, 0, 0); }
+.demo-rgb p.ex2 { outline-style: dotted; outline-color: rgb(0, 0, 255); }
+
+.demo-hsl p {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px 0;
+}
+.demo-hsl p.ex1 { outline-style: solid; outline-color: hsl(0, 100%, 50%); }
+.demo-hsl p.ex2 { outline-style: dotted; outline-color: hsl(240, 100%, 50%); }
+
+/* --- outline shorthand --- */
+.demo-shorthand p {
+  padding: 5px;
+  margin: 10px 0;
+}
+.demo-shorthand p.ex1 { outline: dashed; }
+.demo-shorthand p.ex2 { outline: dotted red; }
+.demo-shorthand p.ex3 { outline: 7px solid yellow; }
+.demo-shorthand p.ex4 { outline: thick ridge pink; }
+
+/* --- outline con esquinas redondeadas --- */
+.demo-redondo p {
+  padding: 5px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+.demo-redondo p.ex1 { outline: dashed; }
+.demo-redondo p.ex2 { outline: dotted red; }
+.demo-redondo p.ex3 { outline: 7px solid yellow; }
+
+/* --- outline-offset --- */
+.demo-offset p {
+  margin: 30px;
+  padding: 5px;
+  border: 1px solid black;
+  outline: 3px solid red;
+  outline-offset: 15px;
+}
+.demo-offset-fondo p {
+  margin: 30px;
+  padding: 5px;
+  background: yellow;
+  border: 1px solid black;
+  outline: 3px solid red;
+  outline-offset: 15px;
+}
+.demo-offset-negativo p {
+  margin: 30px;
+  padding: 5px;
+  background: yellow;
+  border: 1px solid black;
+  outline: 3px solid red;
+  outline-offset: -5px;
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es un outline?</h2>
+<p>Un outline es una línea dibujada alrededor de un elemento, POR FUERA de los bordes, para hacer que el elemento resalte:</p>
+<div class="demo-basico">Este elemento tiene un borde negro y un outline verde de 10px.</div>
+<p>El outline se diferencia del border: se dibuja fuera del borde del elemento y puede sobreponerse a otro contenido. Además, el outline NO forma parte de las dimensiones del elemento, así que no afecta su ancho ni alto total.</p>
+<p>Propiedades de outline: outline-style, outline-color, outline-width, outline-offset, y la abreviada outline.</p>
+
+<h2>outline-style</h2>
+<p>Define el estilo del contorno. No funciona ninguna otra propiedad de outline si esta no está definida:</p>
+<div class="demo-estilo">
+  <p class="dotted">Un outline punteado</p>
+  <p class="dashed">Un outline discontinuo</p>
+  <p class="solid">Un outline sólido</p>
+  <p class="double">Un outline doble</p>
+  <p class="groove">Un outline tipo "groove"</p>
+  <p class="ridge">Un outline tipo "ridge"</p>
+</div>
+
+<h2>outline-width</h2>
+<p>Define el ancho del contorno: thin (~1px), medium (~3px), thick (~5px), o un valor específico:</p>
+<div class="demo-ancho">
+  <p class="ex1">Un outline delgado.</p>
+  <p class="ex2">Un outline mediano.</p>
+  <p class="ex3">Un outline grueso.</p>
+  <p class="ex4">Un outline de 8px.</p>
+</div>
+
+<h2>outline-color</h2>
+<p>Define el color del contorno: por nombre, HEX, RGB, HSL, o con el valor "invert" (que invierte el color para garantizar visibilidad):</p>
+<div class="demo-color">
+  <p class="ex1">Un outline sólido rojo.</p>
+  <p class="ex2">Un outline punteado azul.</p>
+  <p class="ex3">Un outline "outset" verde.</p>
+  <p class="ex4">Un outline sólido invertido.</p>
+</div>
+
+<h3>Con valores HEX</h3>
+<div class="demo-hex">
+  <p class="ex1">Un outline sólido rojo.</p>
+  <p class="ex2">Un outline punteado azul.</p>
+  <p class="ex3">Un outline sólido gris.</p>
+</div>
+
+<h3>Con valores RGB</h3>
+<div class="demo-rgb">
+  <p class="ex1">Un outline sólido rojo.</p>
+  <p class="ex2">Un outline punteado azul.</p>
+</div>
+
+<h3>Con valores HSL</h3>
+<div class="demo-hsl">
+  <p class="ex1">Un outline sólido rojo.</p>
+  <p class="ex2">Un outline punteado azul.</p>
+</div>
+
+<h2>Propiedad abreviada outline</h2>
+<p>Permite definir outline-width, outline-style (obligatorio) y outline-color en una sola declaración, en cualquier orden:</p>
+<div class="demo-shorthand">
+  <p class="ex1">Un outline discontinuo.</p>
+  <p class="ex2">Un outline punteado rojo.</p>
+  <p class="ex3">Un outline sólido amarillo de 7px.</p>
+  <p class="ex4">Un outline grueso "ridge" rosado.</p>
+</div>
+
+<h2>Outline con esquinas redondeadas</h2>
+<p>El outline también puede tener esquinas redondeadas, usando border-radius:</p>
+<div class="demo-redondo">
+  <p class="ex1">Un outline discontinuo con esquinas redondeadas.</p>
+  <p class="ex2">Un outline punteado rojo con esquinas redondeadas.</p>
+  <p class="ex3">Un outline sólido amarillo con esquinas redondeadas.</p>
+</div>
+
+<h2>outline-offset</h2>
+<p>Agrega espacio entre el outline y el borde del elemento. Ese espacio es transparente:</p>
+<div class="demo-offset">
+  <p>Este párrafo tiene un borde negro y un outline rojo a 15px fuera del borde.</p>
+</div>
+
+<h3>Con fondo, para notar la transparencia del espacio</h3>
+<div class="demo-offset-fondo">
+  <p>Este párrafo tiene un outline a 15px fuera del borde, y se nota que el espacio entre ambos es transparente (se ve el fondo amarillo).</p>
+</div>
+
+<h3>Con valor negativo (outline hacia adentro)</h3>
+<div class="demo-offset-negativo">
+  <p>Este párrafo tiene un outline a -5px, es decir, colocado dentro del borde.</p>
+</div>
+
+</body>
+</html>
