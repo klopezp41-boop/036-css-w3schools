@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Espaciado Interno en CSS (Padding)</title>
+<style>
+.demo-basico {
+  padding: 70px;
+  border: 1px solid #4CAF50;
+}
+
+.demo-individual {
+  border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+.demo-4 {
+  border: 1px solid black;
+  padding: 25px 50px 75px 100px;
+  background-color: lightblue;
+}
+.demo-3 {
+  border: 1px solid black;
+  padding: 25px 50px 75px;
+  background-color: lightblue;
+}
+.demo-2 {
+  border: 1px solid black;
+  padding: 25px 50px;
+  background-color: lightblue;
+}
+.demo-1 {
+  border: 1px solid black;
+  padding: 25px;
+  background-color: lightblue;
+}
+
+.ex1 {
+  width: 300px;
+  background-color: yellow;
+}
+.ex2 {
+  width: 300px;
+  padding: 25px;
+  background-color: lightblue;
+}
+
+.ex1b {
+  width: 300px;
+  background-color: yellow;
+}
+.ex2b {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<h2>Padding básico</h2>
+<p>El padding genera espacio alrededor del contenido de un elemento, dentro de cualquier borde definido:</p>
+<div class="demo-basico">Este elemento tiene un padding de 70px.</div>
+
+<h2>Padding por lado individual</h2>
+<p>Se pueden definir valores distintos con padding-top, padding-right, padding-bottom y padding-left. Los valores pueden ser una medida (px, cm, etc), un porcentaje, o inherit. A diferencia de margin, no se permiten valores negativos.</p>
+<div class="demo-individual">Este div tiene padding superior de 50px, derecho de 30px, inferior de 50px, e izquierdo de 80px.</div>
+
+<h2>Propiedad abreviada padding</h2>
+<p>Permite definir los 4 valores de padding en una sola declaración.</p>
+
+<h3>Con 4 valores (arriba, derecha, abajo, izquierda)</h3>
+<div class="demo-4">padding: 25px 50px 75px 100px;</div>
+
+<h3>Con 3 valores (arriba, laterales, abajo)</h3>
+<div class="demo-3">padding: 25px 50px 75px;</div>
+
+<h3>Con 2 valores (arriba/abajo, laterales)</h3>
+<div class="demo-2">padding: 25px 50px;</div>
+
+<h3>Con 1 valor (los 4 lados iguales)</h3>
+<div class="demo-1">padding: 25px;</div>
+
+<h2>Padding y el ancho del elemento</h2>
+<p>La propiedad width especifica el ancho del área de contenido. Si un elemento tiene un ancho definido, el padding se suma a ese ancho total, lo cual muchas veces no es lo deseado:</p>
+<div class="ex1">Este div mide 300px de ancho.</div>
+<br>
+<div class="ex2">El ancho real de este div es 350px, aunque en el CSS se definió como 300px (300px + 25px de padding izquierdo + 25px de padding derecho).</div>
+
+<h2>Padding y box-sizing</h2>
+<p>La propiedad box-sizing define cómo se calculan el ancho y alto de un elemento: si incluyen o no el padding y el borde.</p>
+<ul>
+  <li><b>content-box</b> - valor por defecto. Width y height incluyen solo el contenido (sin padding ni borde)</li>
+  <li><b>border-box</b> - width y height incluyen contenido, padding y borde</li>
+</ul>
+<p>Usando box-sizing: border-box, el ancho se mantiene fijo sin importar cuánto padding se agregue:</p>
+<div class="ex1b">Este div mide 300px de ancho.</div>
+<br>
+<div class="ex2b">El ancho de este div se mantiene en 300px, a pesar de los 50px totales de padding izquierdo y derecho, gracias a box-sizing: border-box.</div>
+
+</body>
+</html>
