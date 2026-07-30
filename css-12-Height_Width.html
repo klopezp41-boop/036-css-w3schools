@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Alto y Ancho en CSS (Height and Width)</title>
+<style>
+.demo-basico {
+  height: 70px;
+  width: 100%;
+  border: 1px solid #4CAF50;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.demo-200 {
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+}
+
+.demo-100px {
+  height: 100px;
+  width: 500px;
+  background-color: powderblue;
+}
+
+.demo-width {
+  width: 600px;
+  padding: 10px;
+  background-color: powderblue;
+  box-sizing: border-box;
+}
+.demo-maxwidth {
+  max-width: 600px;
+  padding: 10px;
+  background-color: powderblue;
+  box-sizing: border-box;
+}
+
+.demo-ambos {
+  width: 100%;
+  max-width: 900px;
+  padding: 10px;
+  background-color: powderblue;
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+
+<h2>Alto y ancho básicos</h2>
+<p>Las propiedades height y width se usan para definir el alto y ancho de un elemento. No incluyen el padding, borde ni margen: definen el área dentro de ellos.</p>
+<div class="demo-basico">Este div tiene un alto de 70 píxeles y un ancho del 100%.</div>
+
+<h2>Valores posibles</h2>
+<ul>
+  <li><b>auto</b> - valor por defecto, el navegador calcula el tamaño</li>
+  <li><b>length</b> - define el tamaño en px, cm, em, etc.</li>
+  <li><b>%</b> - define el tamaño en porcentaje del contenedor</li>
+  <li><b>initial</b> - restablece al valor por defecto</li>
+  <li><b>inherit</b> - hereda el valor del elemento padre</li>
+</ul>
+
+<h3>Ejemplo con porcentaje</h3>
+<div class="demo-200">Este div tiene un alto de 200px y un ancho del 50%.</div>
+
+<h3>Ejemplo con píxeles fijos</h3>
+<div class="demo-100px">Este div tiene un alto de 100px y un ancho de 500px.</div>
+
+<h2>Ancho mínimo y máximo (min/max-width)</h2>
+<p>La propiedad max-width define el ancho máximo permitido de un elemento, evitando que sea más ancho que ese valor. Útil para que la página se comporte mejor en ventanas pequeñas (evita el scroll horizontal).</p>
+
+<h3>width vs max-width</h3>
+<p>Achica la ventana del navegador para ver la diferencia: el div con width fijo no se reduce, mientras que el de max-width sí se adapta:</p>
+<div class="demo-width">Este elemento tiene un width de 600px.</div>
+<br>
+<div class="demo-maxwidth">Este elemento tiene un max-width de 600px.</div>
+
+<h3>Usando width y max-width juntos</h3>
+<p>Si se usan ambas propiedades y el valor de width es mayor que max-width, se usa el valor de max-width:</p>
+<div class="demo-ambos">Este div tiene un width del 100% y un max-width de 900px. Intenta agrandar la ventana del navegador a más de 900px para ver el efecto.</div>
+
+</body>
+</html>
