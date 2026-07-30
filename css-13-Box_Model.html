@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>El Modelo de Caja en CSS (Box Model)</title>
+<style>
+.diagrama-caja {
+  background-color: #f9f9f9;
+  border: 2px dashed #999;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.diagrama-borde {
+  background-color: #ffe0b3;
+  border: 10px solid #d98c00;
+  padding: 20px;
+}
+.diagrama-padding {
+  background-color: #b3d9ff;
+  padding: 15px;
+}
+.diagrama-contenido {
+  background-color: white;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.demo-caja {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+.demo-total {
+  width: 320px;
+  height: 50px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es el modelo de caja?</h2>
+<p>En CSS, "modelo de caja" se refiere al diseño de una caja que envuelve cada elemento HTML. Toda caja consta de cuatro partes, de adentro hacia afuera:</p>
+<ul>
+  <li><b>Content (contenido)</b> - donde aparece el texto o las imágenes</li>
+  <li><b>Padding</b> - despeja un área alrededor del contenido, es transparente</li>
+  <li><b>Border (borde)</b> - rodea el padding y el contenido</li>
+  <li><b>Margin (margen)</b> - despeja un área fuera del borde, también transparente</li>
+</ul>
+
+<h3>Diagrama del modelo de caja</h3>
+<div class="diagrama-caja">
+  MARGIN
+  <div class="diagrama-borde">
+    BORDER
+    <div class="diagrama-padding">
+      PADDING
+      <div class="diagrama-contenido">
+        CONTENT
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Ejemplo funcional</h3>
+<p>El modelo de caja permite agregar un borde alrededor de los elementos y definir espacio entre ellos:</p>
+<div class="demo-caja">Este texto es el contenido de la caja. Se agregó un padding de 50px, un margin de 20px y un borde verde de 15px.</div>
+
+<h2>Ancho y alto de un elemento</h2>
+<p>Importante: al definir width y height con CSS, solo se está definiendo el tamaño del área de contenido. Para calcular el ancho y alto total del elemento, hay que sumar también el padding y el borde.</p>
+
+<h3>Ejemplo de cálculo</h3>
+<div class="demo-total">El ancho total de este elemento es de 350px, y el alto total es de 80px.</div>
+<p>Cálculo del ancho: 320px (contenido) + 20px (padding izq+der) + 10px (borde izq+der) = 350px total.</p>
+<p>Cálculo del alto: 50px (contenido) + 20px (padding sup+inf) + 10px (borde sup+inf) = 80px total.</p>
+<p>Fórmula general:</p>
+<pre><code>Ancho total = width + padding izquierdo + padding derecho + borde izquierdo + borde derecho
+Alto total = height + padding superior + padding inferior + borde superior + borde inferior</code></pre>
+<p>Nota: el margin también afecta el espacio total que ocupa la caja en la página, pero no se incluye en el tamaño real de la caja — el ancho y alto totales terminan en el borde.</p>
+
+</body>
+</html>
