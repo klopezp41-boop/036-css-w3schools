@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Bordes en CSS (Borders)</title>
+<style>
+/* --- Border Style --- */
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.mix {border-style: dotted dashed solid double;}
+
+/* --- Border Width --- */
+p.ancho1 { border-style: solid; border-width: 5px; }
+p.ancho2 { border-style: solid; border-width: medium; }
+p.ancho3 { border-style: dotted; border-width: 2px; }
+p.ancho4 { border-style: dotted; border-width: thick; }
+
+/* Anchos específicos por lado */
+p.lado1 { border-style: solid; border-width: 5px 20px; }
+p.lado2 { border-style: solid; border-width: 25px 10px 4px 35px; }
+
+/* --- Border Color --- */
+p.color1 { border-style: solid; border-color: red; }
+p.color2 { border-style: solid; border-color: green; }
+p.color3 { border-style: dotted; border-color: blue; }
+p.colormix { border-style: solid; border-color: red green blue yellow; }
+
+p.hex1 { border-style: solid; border-color: #ff0000; }
+p.hex2 { border-style: solid; border-color: #0000ff; }
+p.hex3 { border-style: solid; border-color: #bbbbbb; }
+
+p.rgb1 { border-style: solid; border-color: rgb(255, 0, 0); }
+p.rgb2 { border-style: solid; border-color: rgb(0, 0, 255); }
+
+p.hsl1 { border-style: solid; border-color: hsl(0, 100%, 50%); }
+p.hsl2 { border-style: solid; border-color: hsl(240, 100%, 50%); }
+
+/* --- Lados individuales --- */
+p.individual {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+p.cuatro { border-style: dotted solid double dashed; }
+p.tres { border-style: dotted solid double; }
+p.dos { border-style: dotted solid; }
+p.uno { border-style: dotted; }
+
+/* --- Shorthand --- */
+p.shorthand { border: 5px solid red; }
+p.izquierdo { border-left: 6px solid red; background-color: lightgrey; }
+p.inferior { border-bottom: 6px solid red; background-color: lightgrey; }
+
+/* --- Bordes redondeados --- */
+p.normal { border: 2px solid red; padding: 5px; }
+p.round1 { border: 2px solid red; border-radius: 5px; padding: 5px; }
+p.round2 { border: 2px solid red; border-radius: 8px; padding: 5px; }
+p.round3 { border: 2px solid red; border-radius: 12px; padding: 5px; }
+</style>
+</head>
+<body>
+
+<h2>Estilo de borde (border-style)</h2>
+<p>Define qué tipo de borde mostrar. Ninguna otra propiedad de borde funciona si no se define primero border-style:</p>
+<p class="dotted">Un borde punteado.</p>
+<p class="dashed">Un borde discontinuo.</p>
+<p class="solid">Un borde sólido.</p>
+<p class="double">Un borde doble.</p>
+<p class="groove">Un borde tipo "groove" (ranura 3D).</p>
+<p class="ridge">Un borde tipo "ridge" (cresta 3D).</p>
+<p class="inset">Un borde tipo "inset" (hundido 3D).</p>
+<p class="outset">Un borde tipo "outset" (elevado 3D).</p>
+<p class="mix">Un borde mixto (4 estilos distintos).</p>
+
+<h2>Ancho de borde (border-width)</h2>
+<p>Se puede definir con un tamaño específico (px, pt, cm, etc.) o con thin, medium o thick. No funciona sin border-style definido:</p>
+<p class="ancho1">Borde sólido de 5px.</p>
+<p class="ancho2">Borde sólido mediano.</p>
+<p class="ancho3">Borde punteado de 2px.</p>
+<p class="ancho4">Borde punteado grueso.</p>
+
+<h3>Anchos específicos por lado</h3>
+<p class="lado1">5px arriba/abajo, 20px a los lados.</p>
+<p class="lado2">25px arriba, 10px derecha, 4px abajo, 35px izquierda.</p>
+
+<h2>Color de borde (border-color)</h2>
+<p>Se puede definir por nombre, HEX, RGB o HSL. Si no se define, hereda el color del texto del elemento:</p>
+<p class="color1">Borde sólido rojo (por nombre).</p>
+<p class="color2">Borde sólido verde (por nombre).</p>
+<p class="color3">Borde punteado azul (por nombre).</p>
+
+<h3>Colores específicos por lado</h3>
+<p class="colormix">Borde multicolor: rojo arriba, verde derecha, azul abajo, amarillo izquierda.</p>
+
+<h3>Con valores HEX</h3>
+<p class="hex1">Borde rojo (#ff0000).</p>
+<p class="hex2">Borde azul (#0000ff).</p>
+<p class="hex3">Borde gris (#bbbbbb).</p>
+
+<h3>Con valores RGB</h3>
+<p class="rgb1">Borde rojo (rgb).</p>
+<p class="rgb2">Borde azul (rgb).</p>
+
+<h3>Con valores HSL</h3>
+<p class="hsl1">Borde rojo (hsl).</p>
+<p class="hsl2">Borde azul (hsl).</p>
+
+<h2>Bordes individuales por lado</h2>
+<p>Se pueden usar propiedades específicas: border-top-style, border-right-style, border-bottom-style, border-left-style:</p>
+<p class="individual">2 estilos de borde distintos, uno por lado.</p>
+
+<h3>Forma abreviada con varios valores</h3>
+<p>Si border-style tiene 4 valores: arriba, derecha, abajo, izquierda. Con 3 valores: arriba, laterales, abajo. Con 2 valores: arriba/abajo, laterales. Con 1 valor: los 4 lados iguales.</p>
+<p class="cuatro">4 estilos de borde distintos.</p>
+<p class="tres">3 estilos de borde distintos.</p>
+<p class="dos">2 estilos de borde distintos.</p>
+<p class="uno">1 estilo de borde.</p>
+
+<h2>Propiedad abreviada border (shorthand)</h2>
+<p>Permite definir border-width, border-style y border-color en una sola propiedad:</p>
+<p class="shorthand">Esta propiedad es abreviada para border-width, border-style y border-color.</p>
+
+<h3>Solo un lado (border-left, border-bottom)</h3>
+<p class="izquierdo">Propiedad abreviada solo para el borde izquierdo.</p>
+<p class="inferior">Propiedad abreviada solo para el borde inferior.</p>
+
+<h2>Bordes redondeados (border-radius)</h2>
+<p class="normal">Borde normal.</p>
+<p class="round1">Borde redondeado.</p>
+<p class="round2">Borde más redondeado.</p>
+<p class="round3">Borde el más redondeado.</p>
+
+</body>
+</html>
