@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Márgenes en CSS (Margins)</title>
+<style>
+.demo-basico {
+  margin: 70px;
+  border: 1px solid #4CAF50;
+}
+
+.demo-individual {
+  border: 1px solid black;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  background-color: lightblue;
+}
+
+.demo-4 {
+  border: 1px solid black;
+  margin: 25px 50px 75px 100px;
+  background-color: lightblue;
+}
+.demo-3 {
+  border: 1px solid black;
+  margin: 25px 50px 75px;
+  background-color: lightblue;
+}
+.demo-2 {
+  border: 1px solid black;
+  margin: 25px 50px;
+  background-color: lightblue;
+}
+.demo-1 {
+  border: 1px solid black;
+  margin: 25px;
+  background-color: lightblue;
+}
+
+.demo-auto {
+  width: 300px;
+  margin: auto;
+  border: 1px solid red;
+}
+
+.demo-inherit {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+.demo-inherit p.ex1 {
+  margin-left: inherit;
+}
+
+.demo-collapse-titulos h1 {
+  margin-bottom: 50px;
+}
+.demo-collapse-titulos h2 {
+  margin-top: 20px;
+}
+
+.demo-collapse-parrafos p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+</style>
+</head>
+<body>
+
+<h2>Márgenes básicos</h2>
+<p>Los márgenes crean espacio alrededor de los elementos, fuera de cualquier borde definido:</p>
+<div class="demo-basico">Este elemento tiene un margen de 70px.</div>
+
+<h2>Márgenes por lado individual</h2>
+<p>Se pueden definir márgenes distintos para cada lado: margin-top, margin-right, margin-bottom, margin-left. Los valores pueden ser auto, una medida (px, cm, etc), un porcentaje, o inherit. También se permiten valores negativos.</p>
+<div class="demo-individual">Este div tiene margen superior de 100px, derecho de 150px, inferior de 100px, e izquierdo de 80px.</div>
+
+<h2>Propiedad abreviada margin</h2>
+<p>Permite definir los 4 márgenes en una sola declaración.</p>
+
+<h3>Con 4 valores (arriba, derecha, abajo, izquierda)</h3>
+<div class="demo-4">margin: 25px 50px 75px 100px;</div>
+
+<h3>Con 3 valores (arriba, laterales, abajo)</h3>
+<div class="demo-3">margin: 25px 50px 75px;</div>
+
+<h3>Con 2 valores (arriba/abajo, laterales)</h3>
+<div class="demo-2">margin: 25px 50px;</div>
+
+<h3>Con 1 valor (los 4 lados iguales)</h3>
+<div class="demo-1">margin: 25px;</div>
+
+<h2>El valor auto</h2>
+<p>Se puede usar margin: auto para centrar horizontalmente un elemento dentro de su contenedor. El elemento toma el ancho especificado, y el espacio restante se reparte igual entre los márgenes izquierdo y derecho:</p>
+<div class="demo-auto">Este div está centrado horizontalmente porque tiene margin: auto;</div>
+
+<h2>El valor inherit</h2>
+<p>Permite que el margen se herede del elemento padre:</p>
+<div class="demo-inherit">
+  <p class="ex1">Este párrafo tiene un margen izquierdo heredado (del div contenedor).</p>
+</div>
+
+<h2>Colapso de márgenes (Margin Collapse)</h2>
+<p>Ocurre cuando dos márgenes se combinan en uno solo, equivalente al mayor de los dos. Esto pasa solo con márgenes superior e inferior, nunca con los laterales.</p>
+
+<h3>Ejemplo con encabezados</h3>
+<div class="demo-collapse-titulos">
+  <h1>Colapso de márgenes</h1>
+  <h2>Encabezado 2</h2>
+</div>
+<p>Aquí, el h1 tiene margen inferior de 50px y el h2 tiene margen superior de 20px. El margen vertical debería ser 70px (50+20), pero por el colapso de márgenes termina siendo de solo 50px.</p>
+
+<h3>Ejemplo con párrafos</h3>
+<div class="demo-collapse-parrafos">
+  <p>Este es un párrafo.</p>
+  <p>Este es otro párrafo.</p>
+</div>
+<p>Aquí, cada párrafo tiene margen superior e inferior de 30px. El margen entre ellos debería ser 60px (30+30), pero por el colapso de márgenes termina siendo de solo 30px.</p>
+
+</body>
+</html>
