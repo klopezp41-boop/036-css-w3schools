@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Formato de Texto en CSS</title>
+<style>
+/* --- Intro --- */
+.demo-intro {
+  border: 1px solid gray;
+  padding: 8px;
+}
+.demo-intro h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+.demo-intro p {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+}
+.demo-intro a {
+  text-decoration: none;
+  color: #008CBA;
+}
+
+/* --- Color de texto --- */
+.demo-color-fondo {
+  background-color: lightgrey;
+  color: blue;
+  padding: 10px;
+}
+.demo-color-fondo h2 {
+  background-color: black;
+  color: white;
+}
+.demo-color-fondo div {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+}
+
+/* --- Alineación --- */
+.demo-align h2 { text-align: center; }
+.demo-align h3 { text-align: left; }
+.demo-align h4 { text-align: right; }
+
+.demo-justify {
+  border: 1px solid black;
+  padding: 10px;
+  width: 300px;
+  text-align: justify;
+}
+
+.demo-align-last p { width: 300px; border: 1px solid #ccc; padding: 5px; margin-bottom:10px; }
+.demo-align-last p.a { text-align-last: right; }
+.demo-align-last p.b { text-align-last: center; }
+.demo-align-last p.c { text-align-last: justify; }
+
+.demo-vertical img { width:9px; height:9px; }
+.demo-vertical img.a { vertical-align: baseline; }
+.demo-vertical img.b { vertical-align: text-top; }
+.demo-vertical img.c { vertical-align: text-bottom; }
+.demo-vertical img.d { vertical-align: sub; }
+.demo-vertical img.e { vertical-align: super; }
+
+.demo-direction .ex1 {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+/* --- Estilo de decoración --- */
+.demo-decoracion h4 { text-decoration-line: underline; text-decoration-style: solid; }
+.demo-decoracion h5 { text-decoration-line: underline; text-decoration-style: double; }
+.demo-decoracion h6 { text-decoration-line: underline; text-decoration-style: dotted; }
+.demo-decoracion p.ex1 { text-decoration-line: underline; text-decoration-style: dashed; }
+.demo-decoracion p.ex2 { text-decoration-line: underline; text-decoration-style: wavy; }
+.demo-decoracion p.ex3 { text-decoration-line: underline; text-decoration-color: red; text-decoration-style: wavy; }
+
+/* --- Grosor de decoración --- */
+.demo-grosor h4 { text-decoration-line: underline; text-decoration-thickness: auto; }
+.demo-grosor h5 { text-decoration-line: underline; text-decoration-thickness: 5px; }
+.demo-grosor h6 { text-decoration-line: underline; text-decoration-thickness: 25%; }
+.demo-grosor p { text-decoration-line: underline; text-decoration-color: red; text-decoration-style: double; text-decoration-thickness: 5px; }
+
+/* --- Shorthand decoración --- */
+.demo-shorthand-dec h4 { text-decoration: underline; }
+.demo-shorthand-dec h5 { text-decoration: underline red; }
+.demo-shorthand-dec h6 { text-decoration: underline red double; }
+.demo-shorthand-dec p { text-decoration: underline red double 5px; }
+
+.demo-link-sin-subrayado a { text-decoration: none; }
+
+/* --- Transformación --- */
+.demo-transform p.uppercase { text-transform: uppercase; }
+.demo-transform p.lowercase { text-transform: lowercase; }
+.demo-transform p.capitalize { text-transform: capitalize; }
+
+/* --- Espaciado --- */
+.demo-indent p { text-indent: 50px; }
+
+.demo-letterspacing h4 { letter-spacing: 5px; }
+.demo-letterspacing h5 { letter-spacing: -2px; }
+
+.demo-lineheight p.normal { line-height: normal; }
+.demo-lineheight p.small { line-height: 0.7; }
+.demo-lineheight p.big { line-height: 1.8; }
+
+.demo-wordspacing p.normal { word-spacing: normal; }
+.demo-wordspacing p.one { word-spacing: 10px; }
+.demo-wordspacing p.two { word-spacing: -2px; }
+
+.demo-whitespace p { white-space: nowrap; overflow-x: auto; border: 1px solid #ccc; padding: 5px; }
+
+/* --- Sombra de texto --- */
+.demo-shadow1 { text-shadow: 2px 2px; }
+.demo-shadow2 { text-shadow: 2px 2px red; }
+.demo-shadow3 { text-shadow: 2px 2px 5px red; }
+.demo-shadow-blanco { color: white; text-shadow: 2px 2px 4px #000000; background-color: #333; padding:10px; }
+.demo-shadow-neon { text-shadow: 0 0 3px #FF0000; }
+.demo-shadow-multi { text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }
+.demo-shadow-multi2 { color: white; background-color:#333; padding:10px; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px red; }
+</style>
+</head>
+<body>
+
+<h2>Introducción al formato de texto</h2>
+<p>CSS tiene muchas propiedades para dar estilo y formato al texto:</p>
+<div class="demo-intro">
+  <h1>formato de texto</h1>
+  <p>Este texto está estilizado con propiedades de formato de texto. El encabezado usa text-align, text-transform y color. El párrafo tiene sangría, está justificado, y tiene espacio entre caracteres. Se quitó el subrayado de este enlace coloreado <a target="_blank" href="#">"Try it Yourself"</a>.</p>
+</div>
+
+<h2>Color de texto</h2>
+<p>La propiedad color define el color del texto: por nombre, HEX o RGB. El color de texto por defecto se define en el selector body.</p>
+
+<h3>Color de texto y color de fondo</h3>
+<div class="demo-color-fondo">
+  <h2>Este es un encabezado</h2>
+  <p>Esta página tiene fondo gris y texto azul.</p>
+  <div>Este es un div.</div>
+</div>
+<p>Importante: mantener buen contraste entre texto y fondo es clave para personas con problemas de visión.</p>
+
+<h2>Alineación de texto</h2>
+<div class="demo-align">
+  <h2>Encabezado 1 (centrado)</h2>
+  <h3>Encabezado 2 (izquierda)</h3>
+  <h4>Encabezado 3 (derecha)</h4>
+</div>
+
+<h3>text-align: justify</h3>
+<div class="demo-justify">
+En mis años más jóvenes y vulnerables, mi padre me dio un consejo que he estado dando vueltas en mi mente desde entonces. "Cada vez que sientas ganas de criticar a alguien," me dijo, "recuerda que no todos han tenido las ventajas que tú has tenido."
+</div>
+
+<h3>text-align-last</h3>
+<div class="demo-align-last">
+  <h4>text-align-last: right</h4>
+  <p class="a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
+  <h4>text-align-last: center</h4>
+  <p class="b">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
+  <h4>text-align-last: justify</h4>
+  <p class="c">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
+</div>
+
+<h3>vertical-align</h3>
+<div class="demo-vertical">
+  <p>vertical-align: baseline (por defecto): <img class="a" src="https://www.w3schools.com/css/sqorange.gif"></p>
+  <p>vertical-align: text-top: <img class="b" src="https://www.w3schools.com/css/sqorange.gif"></p>
+  <p>vertical-align: text-bottom: <img class="c" src="https://www.w3schools.com/css/sqorange.gif"></p>
+  <p>vertical-align: sub: <img class="d" src="https://www.w3schools.com/css/sqorange.gif"></p>
+  <p>vertical-align: super: <img class="e" src="https://www.w3schools.com/css/sqorange.gif"></p>
+</div>
+
+<h3>Dirección del texto</h3>
+<div class="demo-direction">
+  <p>Esta es la dirección de texto por defecto.</p>
+  <p class="ex1">Esta es la dirección de texto de derecha a izquierda.</p>
+</div>
+
+<h2>Estilos de la línea de decoración</h2>
+<div class="demo-decoracion">
+  <h4>Encabezado con línea sólida</h4>
+  <h5>Encabezado con línea doble</h5>
+  <h6>Encabezado con línea punteada</h6>
+  <p class="ex1">Un párrafo con línea discontinua.</p>
+  <p class="ex2">Otro párrafo con línea ondulada.</p>
+  <p class="ex3">Otro párrafo con línea ondulada roja.</p>
+</div>
+
+<h3>Grosor de la línea de decoración</h3>
+<div class="demo-grosor">
+  <h4>Grosor automático (por defecto)</h4>
+  <h5>Grosor de 5px</h5>
+  <h6>Grosor del 25%</h6>
+  <p>Un párrafo con línea doble roja de 5px.</p>
+</div>
+
+<h3>Propiedad abreviada text-decoration</h3>
+<div class="demo-shorthand-dec">
+  <h4>Subrayado simple</h4>
+  <h5>Subrayado rojo</h5>
+  <h6>Subrayado rojo doble</h6>
+  <p>Subrayado rojo doble de 5px.</p>
+</div>
+
+<h3>Quitar el subrayado de un enlace</h3>
+<div class="demo-link-sin-subrayado">
+  <p>Un enlace sin subrayado: <a href="https://www.w3schools.com">W3Schools.com</a></p>
+</div>
+
+<h2>Transformación de texto</h2>
+<div class="demo-transform">
+  <p class="uppercase">Este texto se transforma a mayúsculas.</p>
+  <p class="lowercase">ESTE TEXTO SE TRANSFORMA A MINÚSCULAS.</p>
+  <p class="capitalize">este texto se capitaliza.</p>
+</div>
+
+<h2>Espaciado de texto</h2>
+
+<h3>text-indent (sangría)</h3>
+<div class="demo-indent">
+  <p>En mis años más jóvenes y vulnerables, mi padre me dio un consejo que he estado dando vueltas en mi mente desde entonces.</p>
+</div>
+
+<h3>letter-spacing (espacio entre letras)</h3>
+<div class="demo-letterspacing">
+  <h4>Este es un encabezado con mayor espaciado</h4>
+  <h5>Este es un encabezado con menor espaciado</h5>
+</div>
+
+<h3>line-height (altura de línea)</h3>
+<div class="demo-lineheight">
+  <p class="normal">Este es un párrafo con line-height estándar.<br>La altura de línea por defecto es entre 110% y 120%.</p>
+  <p class="small">Este es un párrafo con line-height más pequeño.<br>Este es un párrafo con line-height más pequeño.</p>
+  <p class="big">Este es un párrafo con line-height más grande.<br>Este es un párrafo con line-height más grande.</p>
+</div>
+
+<h3>word-spacing (espacio entre palabras)</h3>
+<div class="demo-wordspacing">
+  <p class="normal">Este es un párrafo con espaciado normal entre palabras.</p>
+  <p class="one">Este es un párrafo con mayor espaciado entre palabras.</p>
+  <p class="two">Este es un párrafo con menor espaciado entre palabras.</p>
+</div>
+
+<h3>white-space (evitar salto de línea)</h3>
+<div class="demo-whitespace">
+  <p>Este es un texto que no hará salto de línea. Este es un texto que no hará salto de línea. Este es un texto que no hará salto de línea. Este es un texto que no hará salto de línea.</p>
+</div>
+
+<h2>Sombra de texto (text-shadow)</h2>
+<h1 class="demo-shadow1">Efecto de sombra de texto!</h1>
+
+<h3>Con color</h3>
+<h1 class="demo-shadow2">Efecto de sombra de texto!</h1>
+
+<h3>Con desenfoque (blur)</h3>
+<h1 class="demo-shadow3">Efecto de sombra de texto!</h1>
+
+<h3>Sobre texto blanco</h3>
+<h1 class="demo-shadow-blanco">Efecto de sombra de texto!</h1>
+
+<h3>Efecto neón rojo</h3>
+<h1 class="demo-shadow-neon">Efecto neón rojo!</h1>
+
+<h3>Múltiples sombras (neón rojo y azul)</h3>
+<h1 class="demo-shadow-multi">Efecto neón rojo y azul!</h1>
+
+<h3>Texto blanco con neón negro, azul y rojo</h3>
+<h1 class="demo-shadow-multi2">Efecto de sombra de texto!</h1>
+
+</body>
+</html>
