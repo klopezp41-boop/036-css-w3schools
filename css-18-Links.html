@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Estilos para Enlaces en CSS (Links)</title>
+<style>
+.demo-basico a {
+  color: hotpink;
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.demo-estados a:link { color: red; }
+.demo-estados a:visited { color: green; }
+.demo-estados a:hover { color: hotpink; }
+.demo-estados a:active { color: blue; }
+
+.demo-decoracion a:link { text-decoration: none; }
+.demo-decoracion a:visited { text-decoration: none; }
+.demo-decoracion a:hover { text-decoration: underline; }
+.demo-decoracion a:active { text-decoration: underline; }
+
+.demo-fondo a:link { background-color: yellow; }
+.demo-fondo a:visited { background-color: cyan; }
+.demo-fondo a:hover { background-color: lightgreen; }
+.demo-fondo a:active { background-color: hotpink; }
+
+.demo-varios a.one:link {color:red;}
+.demo-varios a.one:visited {color:blue;}
+.demo-varios a.one:hover {color:orange;}
+
+.demo-varios a.two:link {color:red;}
+.demo-varios a.two:visited {color:blue;}
+.demo-varios a.two:hover {font-size:150%;}
+
+.demo-varios a.three:link {color:red;}
+.demo-varios a.three:visited {color:blue;}
+.demo-varios a.three:hover {background:lightgreen;}
+
+.demo-varios a.four:link {color:red;}
+.demo-varios a.four:visited {color:blue;}
+.demo-varios a.four:hover {font-family:monospace;}
+
+.demo-varios a.five:link {color:red;text-decoration:none;}
+.demo-varios a.five:visited {color:blue;text-decoration:none;}
+.demo-varios a.five:hover {text-decoration:underline;}
+
+.demo-cursor span { display:block; margin-bottom:4px; }
+
+.demo-boton1 a:link, .demo-boton1 a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.demo-boton1 a:hover, .demo-boton1 a:active {
+  background-color: red;
+}
+
+.demo-boton2 a:link, .demo-boton2 a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.demo-boton2 a:hover, .demo-boton2 a:active {
+  background-color: green;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Estilizar enlaces</h2>
+<p>Los enlaces HTML se pueden estilizar con muchas propiedades CSS: color, text-decoration, background-color, font-size, font-weight, font-family, etc.</p>
+<div class="demo-basico">
+  <p><a href="#" target="_blank">Este es un enlace</a></p>
+</div>
+
+<h2>Estilizar según el estado del enlace</h2>
+<p>Los 4 estados de un enlace son: :link (sin visitar), :visited (visitado), :hover (mouse encima), :active (en el momento del clic). Reglas de orden: :hover debe ir después de :link y :visited; :active debe ir después de :hover.</p>
+<div class="demo-estados">
+  <p><a href="#" target="_blank">Este es un enlace</a></p>
+</div>
+
+<h2>text-decoration en enlaces</h2>
+<p>Se usa sobre todo para quitar el subrayado de los enlaces:</p>
+<div class="demo-decoracion">
+  <p><a href="#" target="_blank">Este es un enlace</a></p>
+</div>
+
+<h2>background-color en enlaces</h2>
+<div class="demo-fondo">
+  <p><a href="#" target="_blank">Este es un enlace</a></p>
+</div>
+
+<h2>Más ejemplos de estilos</h2>
+<p>Pasa el mouse sobre los enlaces para ver cómo cambian:</p>
+<div class="demo-varios">
+  <p><a class="one" href="#" target="_blank">Este enlace cambia de color</a></p>
+  <p><a class="two" href="#" target="_blank">Este enlace cambia de tamaño</a></p>
+  <p><a class="three" href="#" target="_blank">Este enlace cambia el color de fondo</a></p>
+  <p><a class="four" href="#" target="_blank">Este enlace cambia la fuente</a></p>
+  <p><a class="five" href="#" target="_blank">Este enlace cambia la decoración de texto</a></p>
+</div>
+
+<h2>La propiedad cursor</h2>
+<p>Pasa el mouse sobre las palabras para ver el cambio de cursor:</p>
+<div class="demo-cursor">
+  <span style="cursor:auto">auto</span>
+  <span style="cursor:crosshair">crosshair</span>
+  <span style="cursor:default">default</span>
+  <span style="cursor:help">help</span>
+  <span style="cursor:move">move</span>
+  <span style="cursor:pointer">pointer</span>
+  <span style="cursor:progress">progress</span>
+  <span style="cursor:text">text</span>
+  <span style="cursor:wait">wait</span>
+</div>
+
+<h2>Enlaces como botones</h2>
+<p>Se pueden combinar varias propiedades CSS para que los enlaces se vean como cajas/botones:</p>
+
+<h3>Botón rojo</h3>
+<div class="demo-boton1">
+  <a href="#" target="_blank">Este es un enlace</a>
+</div>
+
+<h3>Botón con borde verde</h3>
+<div class="demo-boton2">
+  <a href="#" target="_blank">Este es un enlace</a>
+</div>
+
+</body>
+</html>
