@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Fuentes en CSS (Fonts)</title>
+<style>
+/* font-family */
+.p1 { font-family: "Times New Roman", Times, serif; }
+.p2 { font-family: Arial, Helvetica, sans-serif; }
+.p3 { font-family: "Lucida Console", "Courier New", monospace; }
+
+/* fallback */
+.demo-fallback p { font-family: Tahoma, Verdana, sans-serif; }
+
+/* web safe fonts */
+.demo-arial { font-family: Arial, sans-serif; }
+.demo-verdana { font-family: Verdana, sans-serif; }
+.demo-times { font-family: 'Times New Roman', serif; }
+.demo-courier { font-family: 'Courier New', monospace; }
+
+/* font fallbacks por familia genérica */
+.demo-serif { font-family: Georgia, serif; }
+.demo-sansserif { font-family: Tahoma, Verdana, sans-serif; }
+.demo-monospace { font-family: "Courier New", Courier, monospace; }
+.demo-cursive { font-family: "Brush Script MT", cursive; }
+.demo-fantasy { font-family: Copperplate, Papyrus, fantasy; }
+
+/* font-style */
+p.normal { font-style: normal; }
+p.italic { font-style: italic; }
+p.oblique { font-style: oblique; }
+
+/* font-weight */
+p.peso-normal { font-weight: normal; }
+p.peso-light { font-weight: lighter; }
+p.peso-thick { font-weight: bold; }
+p.peso-thicker { font-weight: 900; }
+
+/* font-variant */
+p.variant-normal { font-variant: normal; }
+p.variant-small { font-variant: small-caps; }
+
+/* font-size px */
+.demo-px h1 { font-size: 40px; }
+.demo-px h2 { font-size: 30px; }
+.demo-px p { font-size: 16px; }
+
+/* font-size em */
+.demo-em { font-size: 16px; }
+.demo-em h1 { font-size: 2.5em; }
+.demo-em h2 { font-size: 1.875em; }
+.demo-em p { font-size: 1em; }
+
+/* font-size rem */
+.demo-rem h1 { font-size: 2.5rem; }
+.demo-rem h2 { font-size: 1.875rem; }
+.demo-rem p { font-size: 1rem; }
+
+/* font-size vw */
+.demo-vw h1 { font-size: 6vw; }
+.demo-vw p { font-size: 3vw; }
+
+/* font pairings */
+.demo-pairing1 { font-family: Verdana, sans-serif; font-size: 16px; }
+.demo-pairing1 h3 { font-family: Georgia, serif; font-size: 36px; }
+
+.demo-pairing2 { font-family: Garamond, serif; font-size: 16px; }
+.demo-pairing2 h3 { font-family: Helvetica, sans-serif; font-size: 36px; }
+
+/* font shorthand */
+p.short-a { font: 20px Arial, sans-serif; }
+p.short-b { font: italic bold 16px Arial, sans-serif; }
+p.short-c { font: italic small-caps bold 15px/30px Georgia, serif; }
+</style>
+</head>
+<body>
+
+<h2>La importancia de elegir la fuente correcta</h2>
+<p>Elegir la fuente adecuada tiene un gran impacto en la experiencia de lectura del sitio. Es importante que sea legible, y elegir bien color y tamaño.</p>
+
+<h2>La propiedad font-family</h2>
+<p>Define la fuente de un elemento. Debe incluir varias fuentes como sistema de respaldo (fallback), separadas por comas, terminando siempre con una familia genérica. Si el nombre tiene más de una palabra, va entre comillas.</p>
+<p class="p1">Este es un párrafo mostrado en Times New Roman.</p>
+<p class="p2">Este es un párrafo mostrado en Arial.</p>
+<p class="p3">Este es un párrafo mostrado en Lucida Console.</p>
+
+<h2>Familias genéricas de fuentes</h2>
+<p>Existen 5 familias genéricas: serif (con remates, elegantes), sans-serif (líneas limpias, modernas), monospace (ancho fijo, look mecánico), cursive (imitan escritura a mano) y fantasy (decorativas).</p>
+<p class="demo-serif">Serif: Georgia</p>
+<p class="demo-sansserif">Sans-serif: Tahoma</p>
+<p class="demo-monospace">Monospace: Courier New</p>
+<p class="demo-cursive">Cursive: Brush Script MT</p>
+<p class="demo-fantasy">Fantasy: Copperplate</p>
+
+<h2>Fuentes seguras para la web (Web Safe Fonts)</h2>
+<p>Son fuentes universalmente instaladas en todos los navegadores y dispositivos. Aun así, siempre se recomienda usar fuentes de respaldo por si acaso:</p>
+<div class="demo-fallback">
+  <p>Este párrafo usa Tahoma, con Verdana y sans-serif como respaldo.</p>
+</div>
+
+<h3>Ejemplos de fuentes seguras</h3>
+<p class="demo-arial">Arial: la fuente más usada tanto en medios digitales como impresos.</p>
+<p class="demo-verdana">Verdana: muy popular y legible incluso en tamaños pequeños.</p>
+<p class="demo-times">Times New Roman: una de las fuentes más reconocibles del mundo.</p>
+<p class="demo-courier">Courier New: fuente monoespaciada usada en código y guiones de cine.</p>
+<p>Otras fuentes seguras incluyen: Tahoma, Trebuchet MS, Georgia, Garamond y Brush Script MT.</p>
+
+<h2>font-style</h2>
+<p>Define el estilo de la fuente: normal, italic (cursiva) u oblique (inclinada):</p>
+<p class="normal">Este es un párrafo en estilo normal.</p>
+<p class="italic">Este es un párrafo en estilo itálica.</p>
+<p class="oblique">Este es un párrafo en estilo oblicuo.</p>
+
+<h2>font-weight</h2>
+<p>Define qué tan grueso o delgado se ve el texto: normal, bold, bolder, lighter, o un valor de 100 a 900:</p>
+<p class="peso-normal">Este es un párrafo con peso normal.</p>
+<p class="peso-light">Este es un párrafo con peso más ligero.</p>
+<p class="peso-thick">Este es un párrafo con peso grueso (bold).</p>
+<p class="peso-thicker">Este es un párrafo con peso 900 (más grueso).</p>
+
+<h2>font-variant</h2>
+<p>Especifica si el texto se muestra en versalitas (small-caps), donde las minúsculas se convierten en mayúsculas de menor tamaño:</p>
+<p class="variant-normal">Mi nombre es Ana Pérez.</p>
+<p class="variant-small">Mi nombre es Ana Pérez.</p>
+
+<h2>font-size</h2>
+<p>Se puede definir con unidades absolutas (px, o palabras clave como small/large) o relativas (em, rem, %, vw). Siempre usar las etiquetas HTML apropiadas (h1-h6, p) en vez de solo ajustar el tamaño de fuente.</p>
+
+<h3>Con píxeles (px)</h3>
+<div class="demo-px">
+  <h1>Este es un encabezado 1</h1>
+  <h2>Este es un encabezado 2</h2>
+  <p>Este es un párrafo.</p>
+</div>
+
+<h3>Con em (relativo al elemento padre)</h3>
+<div class="demo-em">
+  <h1>Este es un encabezado 1</h1>
+  <h2>Este es un encabezado 2</h2>
+  <p>Este es un párrafo.</p>
+</div>
+
+<h3>Con rem (relativo a la raíz del documento)</h3>
+<div class="demo-rem">
+  <h1>Este es un encabezado 1</h1>
+  <h2>Este es un encabezado 2</h2>
+  <p>Este es un párrafo.</p>
+</div>
+
+<h3>Con vw (ancho del viewport)</h3>
+<div class="demo-vw">
+  <h1>Texto en VW</h1>
+  <p>Cambia el tamaño de la ventana para ver cómo escala el texto.</p>
+</div>
+
+<h2>Google Fonts</h2>
+<p>Si no quieres usar las fuentes estándar de HTML, puedes usar Google Fonts: son gratuitas y hay más de 1000 para elegir. Se agregan enlazando una hoja de estilos en el head y luego usando el nombre de la fuente en font-family. Ejemplo de cómo se vería (requiere conexión a internet para cargar la fuente real):</p>
+<pre><code>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"&gt;
+
+body {
+  font-family: "Sofia", sans-serif;
+}</code></pre>
+<p>Para usar varias fuentes de Google a la vez, se separan con el carácter pipe (|): <code>family=Sofia|Trirong|Audiowide</code>. Ten cuidado, ya que pedir muchas fuentes puede hacer más lenta la página.</p>
+
+<h2>Buenas combinaciones de fuentes (Font Pairing)</h2>
+<p>Reglas básicas: elegir fuentes que se complementen (ni muy iguales ni muy distintas), usar "superfamilias" de fuentes diseñadas para combinar bien, aprovechar el contraste (por ejemplo serif con sans-serif), y definir una fuente "jefe" con tamaño/peso/color distintivo.</p>
+
+<h3>Georgia y Verdana</h3>
+<div class="demo-pairing1">
+  <h3>Bella Noruega</h3>
+  <p>Noruega tiene un área total de 385,252 kilómetros cuadrados y una población de 5,438,657 habitantes. Limita con Suecia, Finlandia y Rusia al noreste.</p>
+</div>
+
+<h3>Helvetica y Garamond</h3>
+<div class="demo-pairing2">
+  <h3>Bella Noruega</h3>
+  <p>Noruega tiene hermosas montañas, glaciares e impresionantes fiordos. Oslo, la capital, es una ciudad de espacios verdes y museos.</p>
+</div>
+
+<h2>Propiedad abreviada font (shorthand)</h2>
+<p>Permite definir font-style, font-variant, font-weight, font-size, line-height y font-family en una sola declaración. font-size y font-family son obligatorios; si se usa line-height, va justo después de font-size separado por "/"; font-family siempre va al final.</p>
+<p class="short-a">Este párrafo usa: tamaño 20px y fuente Arial.</p>
+<p class="short-b">Este párrafo usa: itálica, negrita, tamaño 16px, fuente Arial.</p>
+<p class="short-c">Este párrafo usa: itálica, versalitas, negrita, tamaño 15px, interlineado 30px, fuente Georgia.</p>
+
+</body>
+</html>
