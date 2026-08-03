@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>La Propiedad position en CSS</title>
+<style>
+div.static {
+  position: static;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.demo-fixed {
+  position: relative;
+  height: 250px;
+  border: 1px dashed #ccc;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+div.fixed {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+  padding: 5px;
+}
+
+div.relativa2 {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 3px solid green;
+  padding: 10px;
+}
+div.absoluta {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid red;
+  padding: 5px;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+}
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 5px;
+}
+.container img {
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.demo-sticky-contenedor {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px dashed #ccc;
+}
+div.sticky {
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es el posicionamiento en CSS?</h2>
+<p>El posicionamiento en CSS permite controlar la ubicación de los elementos en la página, incluso anulando el flujo normal del documento. La propiedad position puede tener los valores: static (por defecto), relative, fixed, absolute y sticky. Se combina con top, bottom, left y right para definir la ubicación final.</p>
+
+<h2>position: static</h2>
+<p>Es el valor por defecto de todos los elementos. No se ve afectado por top, bottom, left ni right, y se posiciona según el flujo normal de la página:</p>
+<div class="static">Este elemento div tiene position: static;</div>
+
+<h2>position: relative</h2>
+<p>Se posiciona en relación a su posición normal. Al usar top/right/bottom/left, se desplaza desde ahí, pero el espacio original que ocupaba no se rellena con otro contenido:</p>
+<div class="relative">Este div tiene position: relative, y está desplazado 30px a la derecha de su posición normal.</div>
+
+<h2>position: fixed</h2>
+<p>Se posiciona en relación al viewport, así que siempre queda en el mismo lugar aunque se haga scroll. No deja un espacio vacío donde estaría normalmente. (Aquí se simula dentro de un contenedor para no afectar el resto del archivo):</p>
+<div class="demo-fixed">
+  <div class="fixed">Este div tiene position: fixed;</div>
+</div>
+
+<h2>position: absolute</h2>
+<p>Se posiciona en relación al ancestro más cercano que tenga una posición distinta de static. Se elimina del flujo normal del documento y puede sobreponerse a otros elementos:</p>
+<div class="relativa2">Este div tiene position: relative;
+  <div class="absoluta">Este div tiene position: absolute;</div>
+</div>
+
+<h2>Posicionar texto sobre una imagen</h2>
+<p>Combinando position: relative en el contenedor y position: absolute en el texto:</p>
+<div class="container">
+  <img src="https://www.w3schools.com/css/img_5terre_wide.jpg" alt="Cinque Terre">
+  <div class="topleft">Arriba a la izquierda</div>
+</div>
+
+<h2>position: sticky</h2>
+<p>Alterna entre relative y fixed según la posición del scroll: se queda "pegado" cuando llega a la posición indicada (aquí, top: 0). Se requiere definir al menos uno de top/right/bottom/left. Haz scroll dentro del recuadro para ver el efecto:</p>
+<div class="demo-sticky-contenedor">
+  <div class="sticky">¡Tengo posición sticky!</div>
+  <div style="padding-bottom:500px; padding-top:10px;">
+    <p>Haz scroll hacia abajo dentro de este recuadro para ver cómo el elemento verde se queda fijo en la parte superior.</p>
+    <p>Texto de relleno para permitir el scroll. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum.</p>
+    <p>Más texto de relleno. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum.</p>
+    <p>Más texto de relleno. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum.</p>
+  </div>
+</div>
+
+</body>
+</html>
