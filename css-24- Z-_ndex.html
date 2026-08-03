@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>La Propiedad z-index en CSS</title>
+<style>
+.demo-basico {
+  position: relative;
+}
+.demo-basico img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 150px;
+}
+
+.container {
+  position: relative;
+}
+.black-box {
+  position: relative;
+  z-index: 1;
+  border: 2px solid black;
+  height: 100px;
+  margin: 30px;
+}
+.gray-box {
+  position: absolute;
+  z-index: 3;
+  background: lightgray;
+  height: 60px;
+  width: 70%;
+  left: 50px;
+  top: 50px;
+}
+.green-box {
+  position: absolute;
+  z-index: 2;
+  background: lightgreen;
+  width: 35%;
+  left: 270px;
+  top: -15px;
+  height: 100px;
+}
+
+.container2 {
+  position: relative;
+}
+.black-box2 {
+  position: relative;
+  border: 2px solid black;
+  height: 100px;
+  margin: 30px;
+}
+.gray-box2 {
+  position: absolute;
+  background: lightgray;
+  height: 60px;
+  width: 70%;
+  left: 50px;
+  top: 50px;
+}
+.green-box2 {
+  position: absolute;
+  background: lightgreen;
+  width: 35%;
+  left: 270px;
+  top: -15px;
+  height: 100px;
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es z-index?</h2>
+<p>Especifica el orden de apilamiento de elementos posicionados: define cuál se muestra delante o detrás de otros cuando se sobreponen. Puede tener un valor positivo o negativo.</p>
+<p>Nota: z-index solo funciona en elementos posicionados (position: absolute, relative, fixed o sticky) y en elementos hijos directos de un contenedor flex.</p>
+
+<h3>Ejemplo básico (z-index negativo)</h3>
+<div class="demo-basico">
+  <h1>Este es un encabezado</h1>
+  <img src="https://www.w3schools.com/css/img_tree.png">
+  <p>Como la imagen tiene z-index: -1, se coloca detrás del texto.</p>
+</div>
+
+<h2>Ejemplo con z-index definido</h2>
+<p>Un elemento con mayor z-index siempre se muestra por encima de uno con menor z-index:</p>
+<div class="container">
+  <div class="black-box">Caja negra (z-index: 1)</div>
+  <div class="gray-box">Caja gris (z-index: 3)</div>
+  <div class="green-box">Caja verde (z-index: 2)</div>
+</div>
+
+<h2>Sin z-index definido</h2>
+<p>Si varios elementos posicionados se sobreponen sin z-index especificado, se muestran en el orden en que aparecen en el código HTML:</p>
+<div class="container2">
+  <div class="black-box2">Caja negra</div>
+  <div class="gray-box2">Caja gris</div>
+  <div class="green-box2">Caja verde</div>
+</div>
+
+</body>
+</html>
