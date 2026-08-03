@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Combinadores en CSS (Combinators)</title>
+<style>
+.demo-descendiente div p {
+  background-color: yellow;
+}
+
+.demo-hijo div > p {
+  background-color: yellow;
+}
+
+.demo-hermano-siguiente div + p {
+  background-color: yellow;
+}
+
+.demo-hermano-subsecuente div ~ p {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es un combinador?</h2>
+<p>Un combinador define la relación entre dos o más selectores. Existen 4 combinadores en CSS: descendiente (espacio), hijo (>), hermano siguiente (+), y hermano subsecuente (~).</p>
+
+<h2>Combinador descendiente (espacio)</h2>
+<p>Selecciona todos los elementos que son descendientes (hijos, nietos, etc.) de un elemento especificado. Aquí, selecciona todos los &lt;p&gt; dentro de un &lt;div&gt;, sin importar el nivel:</p>
+<div class="demo-descendiente">
+  <div>
+    <p>Párrafo 1 en el div.</p>
+    <p>Párrafo 2 en el div.</p>
+    <section><p>Párrafo 3 en el div (dentro de un section).</p></section>
+  </div>
+  <p>Párrafo 4. No está en un div.</p>
+  <p>Párrafo 5. No está en un div.</p>
+</div>
+
+<h2>Combinador hijo (>)</h2>
+<p>Selecciona solo los elementos que son hijos directos de un elemento especificado. Aquí, el párrafo dentro de section NO se selecciona, porque es nieto, no hijo directo:</p>
+<div class="demo-hijo">
+  <div>
+    <p>Párrafo 1 en el div.</p>
+    <p>Párrafo 2 en el div.</p>
+    <section>
+      <!-- no es hijo, es descendiente -->
+      <p>Párrafo 3 en el div (dentro de un section).</p>
+    </section>
+    <p>Párrafo 4 en el div.</p>
+  </div>
+  <p>Párrafo 5. No está en un div.</p>
+</div>
+
+<h2>Combinador de hermano siguiente (+)</h2>
+<p>Selecciona el elemento que va justo después de un elemento específico, y que comparte el mismo padre. Solo selecciona el primer párrafo inmediatamente después de cada div:</p>
+<div class="demo-hermano-siguiente">
+  <div>
+    <p>Párrafo 1 en el div.</p>
+    <p>Párrafo 2 en el div.</p>
+  </div>
+  <p>Párrafo 3. Después de un div.</p>
+  <p>Párrafo 4. Después de un div (este no se selecciona, no es inmediato).</p>
+</div>
+
+<h2>Combinador de hermanos subsecuentes (~)</h2>
+<p>Selecciona todos los elementos que son hermanos posteriores de un elemento especificado (no solo el inmediato), compartiendo el mismo padre:</p>
+<div class="demo-hermano-subsecuente">
+  <p>Párrafo 1.</p>
+  <div>
+    <p>Párrafo 2.</p>
+  </div>
+  <p>Párrafo 3.</p>
+  <code>Algo de código.</code>
+  <p>Párrafo 4.</p>
+</div>
+
+</body>
+</html>
