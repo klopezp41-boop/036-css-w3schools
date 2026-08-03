@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Opacidad en CSS (Opacity)</title>
+<style>
+.demo-basico img {
+  opacity: 0.5;
+}
+
+.demo-hover img {
+  opacity: 0.5;
+}
+.demo-hover img:hover {
+  opacity: 1.0;
+}
+
+.demo-hover-invertido img:hover {
+  opacity: 0.5;
+}
+
+.demo-cajas div {
+  background-color: green;
+  padding: 10px;
+  color: white;
+  margin-bottom: 5px;
+}
+.demo-cajas div.first { opacity: 0.1; }
+.demo-cajas div.second { opacity: 0.3; }
+.demo-cajas div.third { opacity: 0.6; }
+
+.demo-rgba div {
+  background-color: rgb(4, 170, 109);
+  padding: 10px;
+  color: white;
+  margin-bottom: 5px;
+}
+.demo-rgba div.first { background-color: rgba(4, 170, 109, 0.1); }
+.demo-rgba div.second { background-color: rgba(4, 170, 109, 0.3); }
+.demo-rgba div.third { background-color: rgba(4, 170, 109, 0.6); }
+
+.demo-caja-texto {
+  background: url('https://www.w3schools.com/css/klematis.jpg') repeat;
+  border: 2px solid black;
+  padding: 20px;
+}
+.demo-caja-texto .transbox {
+  margin: 30px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid black;
+}
+.demo-caja-texto .transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+</style>
+</head>
+<body>
+
+<h2>La propiedad opacity</h2>
+<p>Especifica la opacidad/transparencia de un elemento, con un valor de 0.0 (totalmente transparente) a 1.0 (totalmente opaco, valor por defecto):</p>
+<div class="demo-basico">
+  <p>Imagen con 50% de opacidad:</p>
+  <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Bosque" width="170" height="100">
+</div>
+
+<h2>Opacity y :hover</h2>
+<p>Se usa a menudo junto con :hover para cambiar la opacidad al pasar el mouse:</p>
+<div class="demo-hover">
+  <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Bosque" width="170" height="100">
+  <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Montañas" width="170" height="100">
+  <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Italia" width="170" height="100">
+</div>
+
+<h3>Efecto hover invertido</h3>
+<div class="demo-hover-invertido">
+  <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Bosque" width="170" height="100">
+  <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Montañas" width="170" height="100">
+  <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Italia" width="170" height="100">
+</div>
+
+<h2>Cajas transparentes</h2>
+<p>Al usar opacity, todos los elementos hijos heredan la misma transparencia, lo que puede dificultar la lectura del texto:</p>
+<div class="demo-cajas">
+  <div class="first"><p>opacidad 0.1</p></div>
+  <div class="second"><p>opacidad 0.3</p></div>
+  <div class="third"><p>opacidad 0.6</p></div>
+  <div><p>opacidad 1 (por defecto)</p></div>
+</div>
+
+<h2>Transparencia usando background-color (RGBA)</h2>
+<p>Para que la transparencia NO afecte a los elementos hijos, se usa background-color con un valor RGBA:</p>
+<div class="demo-rgba">
+  <p>Con background-color y RGBA (el texto se mantiene totalmente opaco):</p>
+  <div class="first"><p>10% de opacidad</p></div>
+  <div class="second"><p>30% de opacidad</p></div>
+  <div class="third"><p>60% de opacidad</p></div>
+  <div><p>por defecto</p></div>
+</div>
+
+<h2>Texto en una caja transparente</h2>
+<div class="demo-caja-texto">
+  <div class="transbox">
+    <p>Este es un texto que está colocado dentro de la caja transparente.</p>
+  </div>
+</div>
+
+</body>
+</html>
