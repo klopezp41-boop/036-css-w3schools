@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>La Propiedad overflow en CSS</title>
+<style>
+#overflowTest {
+  background: #04AA6D;
+  color: white;
+  padding: 15px;
+  width: 90%;
+  height: 100px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+}
+
+.demo-visible {
+  background-color: coral;
+  width: 200px;
+  height: 65px;
+  border: 1px solid;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+.demo-hidden {
+  background-color: coral;
+  width: 200px;
+  height: 65px;
+  border: 1px solid black;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.demo-scroll {
+  background-color: coral;
+  width: 200px;
+  height: 100px;
+  border: 1px solid black;
+  overflow: scroll;
+  margin-bottom: 20px;
+}
+
+.demo-xy1 {
+  background-color: coral;
+  width: 200px;
+  height: 65px;
+  border: 1px solid black;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+.demo-xy2 {
+  background-color: coral;
+  width: 200px;
+  height: 65px;
+  border: 1px solid black;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+</head>
+<body>
+
+<h2>La propiedad overflow</h2>
+<p>Controla qué pasa con el contenido que es muy grande para el área que lo contiene: si se recorta o se agregan barras de scroll. Valores: visible (por defecto), hidden, scroll, auto.</p>
+<p>Aquí se agregan barras de scroll cuando el contenido desborda:</p>
+<div id="overflowTest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+
+<h2>overflow: visible</h2>
+<p>Por defecto, el desborde es visible: no se recorta y se muestra fuera de la caja del elemento:</p>
+<div class="demo-visible">Puedes usar la propiedad overflow cuando quieras tener mejor control del diseño. Esta propiedad especifica qué pasa si el contenido desborda la caja del elemento.</div>
+
+<h2>overflow: hidden</h2>
+<p>Con el valor hidden, el desborde se recorta y el resto del contenido queda oculto:</p>
+<div class="demo-hidden">Puedes usar la propiedad overflow cuando quieras tener mejor control del diseño. Esta propiedad especifica qué pasa si el contenido desborda la caja del elemento.</div>
+
+<h2>overflow: scroll</h2>
+<p>Con scroll, siempre se agregan barras de desplazamiento horizontal y vertical, aunque no se necesiten:</p>
+<div class="demo-scroll">Puedes usar la propiedad overflow cuando quieras tener mejor control del diseño. Esta propiedad especifica qué pasa si el contenido desborda la caja del elemento.</div>
+
+<h2>overflow-x y overflow-y</h2>
+<p>Permiten controlar el desborde de forma independiente para cada dirección: overflow-x afecta los bordes izquierdo/derecho, y overflow-y los bordes superior/inferior.</p>
+
+<h3>Ocultar scroll horizontal, agregar scroll vertical</h3>
+<div class="demo-xy1">Puedes usar la propiedad overflow cuando quieras tener mejor control del diseño. Esta propiedad especifica qué pasa si el contenido desborda la caja del elemento.</div>
+
+<h3>Casos de uso comunes</h3>
+<p>Tablas anchas con scroll horizontal (overflow-x: auto), ventanas de chat con scroll vertical (overflow-y: scroll), y bloques de código con líneas largas (overflow-x: auto).</p>
+
+<h3>Solo scroll horizontal</h3>
+<div class="demo-xy2">Puedes usar la propiedad overflow cuando quieras tener mejor control del diseño. Esta propiedad especifica qué pasa si el contenido desborda la caja del elemento.</div>
+
+</body>
+</html>
