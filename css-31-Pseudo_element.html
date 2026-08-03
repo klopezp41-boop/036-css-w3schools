@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Pseudo-elementos en CSS (Pseudo-elements)</title>
+<style>
+.demo-first-line p::first-line {
+  color: red;
+  font-variant: small-caps;
+  font-size: 19px;
+}
+
+.demo-first-letter p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+.demo-clase p.intro::first-letter {
+  color: #ff0000;
+  font-size: 200%;
+}
+
+.demo-multiple p::first-letter {
+  color: red;
+  font-size: xx-large;
+}
+.demo-multiple p::first-line {
+  color: blue;
+  font-variant: small-caps;
+}
+
+.demo-before h3::before {
+  content: "☀ ";
+}
+
+.demo-after h3::after {
+  content: " ☀";
+}
+
+.demo-marker ::marker {
+  color: red;
+  font-size: 23px;
+}
+
+.demo-selection ::selection {
+  color: red;
+  background: yellow;
+}
+
+.demo-backdrop button {
+  font-size: 15px;
+  padding: 5px 15px;
+}
+.demo-backdrop dialog::backdrop {
+  background-color: lightgreen;
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es un pseudo-elemento?</h2>
+<p>Es una palabra clave que se agrega a un selector para estilizar una parte específica de un elemento. Se usa para: estilizar la primera letra/línea, insertar contenido antes o después, estilizar marcadores de listas, el texto seleccionado por el usuario, o el fondo detrás de un cuadro de diálogo.</p>
+<p>Sintaxis: <code>selector::nombre-pseudo-elemento { propiedades }</code></p>
+<ul>
+  <li><b>De texto:</b> ::first-line, ::first-letter</li>
+  <li><b>De contenido:</b> ::before, ::after, ::marker, ::selection, ::backdrop</li>
+</ul>
+
+<h2>Pseudo-elementos de texto</h2>
+
+<h3>::first-line</h3>
+<p>Aplica un estilo especial a la primera línea de un texto (solo funciona en elementos de bloque):</p>
+<div class="demo-first-line">
+  <p>Puedes usar el pseudo-elemento ::first-line para agregar un efecto especial a la primera línea de un texto. Algo más de texto. Y aún más, y más, y más, y más, y más.</p>
+</div>
+
+<h3>::first-letter</h3>
+<p>Aplica un estilo especial a la primera letra de un texto:</p>
+<div class="demo-first-letter">
+  <p>Puedes usar el pseudo-elemento ::first-letter para agregar un efecto especial al primer carácter de un texto.</p>
+</div>
+
+<h3>Pseudo-elementos combinados con clases HTML</h3>
+<div class="demo-clase">
+  <p class="intro">Esta es una introducción.</p>
+  <p>Este es un párrafo con algo de texto. Un poco más de texto incluso.</p>
+</div>
+
+<h3>Varios pseudo-elementos combinados</h3>
+<p>La primera letra se ve en rojo y grande, el resto de la primera línea en azul y versalitas, y el resto del párrafo con el estilo normal:</p>
+<div class="demo-multiple">
+  <p>Puedes combinar ::first-letter y ::first-line para agregar un efecto especial a la primera letra y primera línea de un texto.</p>
+</div>
+
+<h2>Pseudo-elementos de contenido</h2>
+
+<h3>::before</h3>
+<p>Inserta contenido antes del contenido de un elemento, usando la propiedad content:</p>
+<div class="demo-before">
+  <h3>Este es un encabezado</h3>
+  <p>El pseudo-elemento ::before inserta contenido antes del contenido de un elemento.</p>
+</div>
+
+<h3>::after</h3>
+<p>Inserta contenido después del contenido de un elemento:</p>
+<div class="demo-after">
+  <h3>Este es un encabezado</h3>
+  <p>El pseudo-elemento ::after inserta contenido después del contenido de un elemento.</p>
+</div>
+
+<h3>::marker</h3>
+<p>Estiliza los marcadores de los elementos de lista:</p>
+<div class="demo-marker">
+  <ul>
+    <li>Café</li>
+    <li>Té</li>
+    <li>Leche</li>
+  </ul>
+  <ol>
+    <li>Primero</li>
+    <li>Segundo</li>
+    <li>Tercero</li>
+  </ol>
+</div>
+
+<h3>::selection</h3>
+<p>Estiliza la parte del texto que el usuario selecciona con el mouse. Selecciona algo de texto aquí abajo para ver el efecto:</p>
+<div class="demo-selection">
+  <p>Este es un párrafo.</p>
+  <div>Este es un texto dentro de un div.</div>
+</div>
+
+<h3>::backdrop</h3>
+<p>Estiliza el fondo detrás de un cuadro de diálogo:</p>
+<div class="demo-backdrop">
+  <button id="dialogBtn">Mostrar diálogo</button>
+  <dialog id="myDialog">
+    <form method="dialog">
+      <p>El fondo detrás de este diálogo es un backdrop.</p>
+      <button>Cerrar diálogo</button>
+    </form>
+  </dialog>
+</div>
+<script>
+const dialogBtn = document.getElementById('dialogBtn');
+const myDialog = document.getElementById('myDialog');
+dialogBtn.addEventListener('click', () => myDialog.showModal());
+</script>
+
+</body>
+</html>
