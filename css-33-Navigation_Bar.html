@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Barras de Navegación en CSS (Navigation Bars)</title>
+<style>
+/* --- Intro --- */
+.demo-intro ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Vertical básica --- */
+.demo-vertical-basica ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+.demo-vertical-basica li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.demo-vertical-basica li a:hover {
+  background-color: #555555;
+  color: white;
+}
+
+/* --- Vertical con estado activo --- */
+.demo-vertical-activa ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+.demo-vertical-activa li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.demo-vertical-activa li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.demo-vertical-activa li a:hover:not(.active) {
+  background-color: #555555;
+  color: white;
+}
+
+/* --- Vertical centrada con bordes --- */
+.demo-vertical-bordes ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  border: 1px solid #555555;
+}
+.demo-vertical-bordes li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.demo-vertical-bordes li {
+  text-align: center;
+  border-bottom: 1px solid #555555;
+}
+.demo-vertical-bordes li:last-child { border-bottom: none; }
+.demo-vertical-bordes li a.active { background-color: #04AA6D; color: white; }
+.demo-vertical-bordes li a:hover:not(.active) { background-color: #555555; color: white; }
+
+/* --- Vertical altura completa (simulada) --- */
+.demo-fullheight {
+  position: relative;
+  height: 200px;
+  border: 1px dashed #ccc;
+  overflow: hidden;
+}
+.demo-fullheight ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 130px;
+  background-color: #f1f1f1;
+  position: absolute;
+  height: 100%;
+  overflow: auto;
+}
+.demo-fullheight li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.demo-fullheight li a.active { background-color: #04AA6D; color: white; }
+.demo-fullheight li a:hover:not(.active) { background-color: #555555; color: white; }
+.demo-fullheight .contenido {
+  margin-left: 130px;
+  padding: 1px 16px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* --- Horizontal con float --- */
+.demo-h-float ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+.demo-h-float li { float: left; }
+.demo-h-float li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-h-float li a:hover { background-color: #111111; }
+.demo-h-float::after { content: ""; clear: both; display: table; }
+
+/* --- Horizontal con flex --- */
+.demo-h-flex ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+}
+.demo-h-flex li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-h-flex li a:hover { background-color: #111111; }
+
+/* --- Horizontal centrada con flex --- */
+.demo-h-flex-centrada ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+}
+.demo-h-flex-centrada li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-h-flex-centrada li a:hover { background-color: #111111; }
+
+/* --- Horizontal con activo (flex) --- */
+.demo-h-activa ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+}
+.demo-h-activa li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-h-activa li a:hover:not(.active) { background-color: #111111; }
+.demo-h-activa li a.active { background-color: #04AA6D; }
+
+/* --- Horizontal gris --- */
+.demo-h-gris ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+.demo-h-gris li a {
+  display: block;
+  color: #666666;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-h-gris li a:hover:not(.active) { background-color: #dddddd; }
+.demo-h-gris li a.active { background-color: #04AA6D; color:white; }
+
+/* --- Horizontal con último enlace a la derecha --- */
+.demo-h-derecha ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+.demo-h-derecha li { float: left; }
+.demo-h-derecha li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-h-derecha li a:hover:not(.active) { background-color: #111111; }
+.demo-h-derecha li a.active { background-color: #04AA6D; }
+.demo-h-derecha::after { content: ""; clear: both; display: table; }
+
+/* --- Divisores con bordes --- */
+.demo-h-divisores ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+.demo-h-divisores li {
+  float: left;
+  border-right: 1px solid #bbbbbb;
+}
+.demo-h-divisores li:last-child { border-right: none; }
+.demo-h-divisores li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-h-divisores li a:hover:not(.active) { background-color: #111111; }
+.demo-h-divisores li a.active { background-color: #04AA6D; }
+.demo-h-divisores::after { content: ""; clear: both; display: table; }
+
+/* --- Fija (simulada dentro de contenedor) --- */
+.demo-fija {
+  position: relative;
+  height: 180px;
+  border: 1px dashed #ccc;
+  overflow-y: scroll;
+}
+.demo-fija ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  position: sticky;
+  top: 0;
+}
+.demo-fija li { float: left; }
+.demo-fija li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-fija li a:hover:not(.active) { background-color: #111; }
+.demo-fija li a.active { background-color: #04AA6D; }
+
+/* --- Dropdown --- */
+.demo-dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background-color: #38444d;
+}
+.demo-dropdown li { float: left; position: relative; }
+.demo-dropdown li a, .demo-dropdown .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-dropdown li a:hover, .demo-dropdown .dropdown:hover .dropbtn {
+  background-color: red;
+}
+.demo-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.demo-dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.demo-dropdown .dropdown-content a:hover { background-color: #f1f1f1; }
+.demo-dropdown .dropdown:hover .dropdown-content { display: block; }
+.demo-dropdown::after { content: ""; clear: both; display: table; }
+</style>
+</head>
+<body>
+
+<h2>Barras de navegación</h2>
+<p>Una barra de navegación ayuda a los usuarios a moverse entre secciones de un sitio. Normalmente se construyen con &lt;ul&gt; y &lt;li&gt;, estilizadas con CSS. Es básicamente una lista de enlaces:</p>
+<div class="demo-intro">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h2>Barra de navegación vertical</h2>
+
+<h3>Básica</h3>
+<div class="demo-vertical-basica">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Con estado activo</h3>
+<div class="demo-vertical-activa">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Centrada con bordes</h3>
+<div class="demo-vertical-bordes">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>De altura completa (simulada en un recuadro)</h3>
+<div class="demo-fullheight">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <div class="contenido">
+    <p>Haz scroll aquí para ver cómo el menú lateral permanece fijo.</p>
+    <p>Texto de relleno.</p>
+    <p>Texto de relleno.</p>
+    <p>Texto de relleno.</p>
+  </div>
+</div>
+
+<h2>Barra de navegación horizontal</h2>
+
+<h3>Usando float</h3>
+<div class="demo-h-float">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Usando flex</h3>
+<div class="demo-h-flex">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Centrada con flex (justify-content: center)</h3>
+<div class="demo-h-flex-centrada">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Con estado activo</h3>
+<div class="demo-h-activa">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Estilo gris</h3>
+<div class="demo-h-gris">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Último enlace alineado a la derecha</h3>
+<div class="demo-h-derecha">
+  <ul>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li style="float:right"><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Divisores entre enlaces (border-right)</h3>
+<div class="demo-h-divisores">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<h3>Barra fija/sticky (simulada en un recuadro con scroll)</h3>
+<p>Se logra con position: fixed (para toda la página) o position: sticky (aquí, dentro de un recuadro con scroll):</p>
+<div class="demo-fija">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p style="padding:10px;">Haz scroll dentro de este recuadro para ver cómo el menú se queda pegado arriba.</p>
+  <p style="padding:0 10px;">Texto de relleno para permitir el scroll.</p>
+  <p style="padding:0 10px;">Texto de relleno para permitir el scroll.</p>
+  <p style="padding:0 10px;">Texto de relleno para permitir el scroll.</p>
+</div>
+
+<h3>Menú desplegable (dropdown)</h3>
+<p>Pasa el mouse sobre "Dropdown" para ver el menú:</p>
+<div class="demo-dropdown">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<h2>Barra de navegación responsiva</h2>
+<p>Con media queries se puede transformar una barra horizontal en vertical (o apilada) en pantallas pequeñas. Cambia el ancho de la ventana para ver el efecto:</p>
+<style>
+.demo-responsive ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.demo-responsive li { float: left; }
+.demo-responsive li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.demo-responsive li a:hover:not(.active) { background-color: #111; }
+.demo-responsive li a.active { background-color: #04AA6D; }
+.demo-responsive li.right { float: right; }
+@media screen and (max-width: 600px) {
+  .demo-responsive li.right,
+  .demo-responsive li { float: none; }
+}
+</style>
+<div class="demo-responsive">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li class="right"><a href="#about">About</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
