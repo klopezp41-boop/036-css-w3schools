@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Estilos para Listas en CSS (Lists)</title>
+<style>
+/* --- list-style-type --- */
+ul.a {list-style-type: circle;}
+ul.b {list-style-type: disc;}
+ul.c {list-style-type: square;}
+ol.d {list-style-type: upper-roman;}
+ol.e {list-style-type: lower-roman;}
+ol.f {list-style-type: lower-alpha;}
+ol.g {list-style-type: decimal;}
+
+/* --- list-style-image --- */
+.demo-image ul {
+  list-style-image: url('https://www.w3schools.com/css/sqpurple.gif');
+  list-style-type: square;
+}
+
+/* --- list-style-position --- */
+ul.pos-outside { list-style-position: outside; }
+ul.pos-inside { list-style-position: inside; }
+
+/* --- quitar marcadores --- */
+ul.sin-marcador {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- shorthand --- */
+.demo-shorthand ul {
+  list-style: square inside url("https://www.w3schools.com/css/sqpurple.gif");
+}
+
+/* --- listas con colores --- */
+.demo-colores ol {
+  background: salmon;
+  padding: 20px;
+}
+.demo-colores ol li {
+  background: mistyrose;
+  color: darkred;
+  padding: 10px;
+  margin-left: 20px;
+}
+.demo-colores ul {
+  background: powderblue;
+  padding: 20px;
+}
+.demo-colores ul li {
+  background: mistyrose;
+  color: darkblue;
+  margin: 5px;
+}
+</style>
+</head>
+<body>
+
+<h2>Estilizar listas</h2>
+<p>En HTML hay dos tipos principales de listas: &lt;ul&gt; (no ordenada, con viñetas) y &lt;ol&gt; (ordenada, con números o letras). CSS ofrece las propiedades: list-style-type, list-style-image, list-style-position, y la abreviada list-style.</p>
+
+<h2>list-style-type (marcadores de lista)</h2>
+<p>Ejemplo de listas no ordenadas:</p>
+<ul class="a">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ul>
+<ul class="b">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ul>
+<ul class="c">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ul>
+
+<p>Ejemplo de listas ordenadas:</p>
+<ol class="d">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ol>
+<ol class="e">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ol>
+<ol class="f">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ol>
+<ol class="g">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ol>
+
+<h2>list-style-image (marcador con imagen)</h2>
+<p>Reemplaza el marcador de la lista con una imagen. Siempre se recomienda definir también list-style-type, por si la imagen no carga:</p>
+<div class="demo-image">
+  <ul>
+    <li>Café</li>
+    <li>Té</li>
+    <li>Coca Cola</li>
+  </ul>
+</div>
+
+<h2>list-style-position (posición de los marcadores)</h2>
+<h3>outside (por defecto)</h3>
+<ul class="pos-outside">
+  <li>Café - Bebida elaborada a partir de granos de café tostados.</li>
+  <li>Té - Bebida aromática preparada vertiendo agua caliente sobre hojas curadas de la planta Camellia sinensis.</li>
+</ul>
+
+<h3>inside</h3>
+<ul class="pos-inside">
+  <li>Café - Bebida elaborada a partir de granos de café tostados.</li>
+  <li>Té - Bebida aromática preparada vertiendo agua caliente sobre hojas curadas de la planta Camellia sinensis.</li>
+</ul>
+
+<h2>Quitar los marcadores de la lista</h2>
+<p>Se usa list-style-type: none. Recuerda también quitar el margin y padding por defecto de la lista:</p>
+<p>Lista por defecto:</p>
+<ul>
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ul>
+<p>Lista sin viñetas, margen ni padding:</p>
+<ul class="sin-marcador">
+  <li>Café</li>
+  <li>Té</li>
+  <li>Coca Cola</li>
+</ul>
+
+<h2>Propiedad abreviada list-style</h2>
+<p>Permite definir list-style-type, list-style-position y list-style-image en una sola declaración, en ese orden:</p>
+<div class="demo-shorthand">
+  <ul>
+    <li>Café</li>
+    <li>Té</li>
+    <li>Coca Cola</li>
+  </ul>
+</div>
+
+<h2>Listas con colores</h2>
+<p>Lo que se agrega a la etiqueta &lt;ol&gt; o &lt;ul&gt; afecta a toda la lista, mientras que lo agregado a &lt;li&gt; afecta a cada elemento individual:</p>
+<div class="demo-colores">
+  <ol>
+    <li>Café</li>
+    <li>Té</li>
+    <li>Coca Cola</li>
+  </ol>
+  <ul>
+    <li>Café</li>
+    <li>Té</li>
+    <li>Coca Cola</li>
+  </ul>
+</div>
+
+</body>
+</html>
