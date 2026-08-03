@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Estilizar Formularios en CSS (Forms)</title>
+<style>
+/* --- Formulario básico estilizado --- */
+.demo-basico form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.demo-basico label { display: block; }
+.demo-basico input[type=text], .demo-basico select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.demo-basico input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.demo-basico input[type=submit]:hover { background-color: #45a049; }
+
+/* --- Ancho --- */
+.demo-ancho input { width: 100%; }
+
+/* --- Padding --- */
+.demo-padding label { display: block; }
+.demo-padding input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+/* --- Borde --- */
+.demo-borde label { display: block; }
+.demo-borde input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 8px;
+}
+
+.demo-borde-inferior label { display: block; }
+.demo-borde-inferior input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid red;
+}
+
+/* --- Color de fondo y texto --- */
+.demo-color label { display: block; }
+.demo-color input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;
+}
+
+/* --- Focus --- */
+.demo-focus label { display: block; }
+.demo-focus input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+.demo-focus input[type=text]:focus {
+  background-color: lightblue;
+}
+
+.demo-focus-borde label { display: block; }
+.demo-focus-borde input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  transition: 0.5s;
+  outline: none;
+}
+.demo-focus-borde input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+/* --- Ícono en el input --- */
+.demo-icono input[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+/* --- Búsqueda animada --- */
+.demo-animada input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+.demo-animada input[type=text]:focus {
+  width: 100%;
+}
+
+/* --- Textarea --- */
+.demo-textarea textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+/* --- Dropdown --- */
+.demo-dropdown-form select {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+/* --- Botones --- */
+.demo-botones input[type=button], .demo-botones input[type=submit], .demo-botones input[type=reset] {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* --- Formulario responsivo --- */
+.responsive-form * { box-sizing: border-box; }
+.responsive-form {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #04AA6D;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.responsive-form form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.responsive-form label {
+  min-width: 48%;
+  margin-bottom: 10px;
+}
+.responsive-form input[type=text], .responsive-form select {
+  min-width: 45%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+.responsive-form textarea {
+  min-width: 45%;
+  height: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+.responsive-form input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .responsive-form label,
+  .responsive-form input[type=text],
+  .responsive-form input[type=submit],
+  .responsive-form select,
+  .responsive-form textarea {
+    flex: 100%;
+    min-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Estilizar formularios con CSS</h2>
+<p>El aspecto de un formulario HTML se puede mejorar mucho con CSS:</p>
+<div class="demo-basico">
+  <form action="#">
+    <label for="fname">Nombre</label>
+    <input type="text" id="fname" name="firstname" placeholder="Tu nombre...">
+    <label for="lname">Apellido</label>
+    <input type="text" id="lname" name="lastname" placeholder="Tu apellido...">
+    <label for="country">País</label>
+    <select id="country" name="country">
+      <option value="mexico">México</option>
+      <option value="guatemala">Guatemala</option>
+      <option value="colombia">Colombia</option>
+    </select>
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+<p>Propiedades CSS comunes para estilizar campos: width, padding, margin, border, border-radius, background-color, color, font-size.</p>
+
+<h2>Ancho del input</h2>
+<div class="demo-ancho">
+  <form action="#">
+    <label for="fname2">Nombre</label>
+    <input type="text" id="fname2" name="fname2">
+  </form>
+</div>
+<p>Para estilizar un tipo específico de input, se usan selectores de atributo, como <code>input[type=text]</code>.</p>
+
+<h2>Padding en el input</h2>
+<div class="demo-padding">
+  <form action="#">
+    <label for="fname3">Nombre</label>
+    <input type="text" id="fname3" name="fname3">
+    <label for="lname3">Apellido</label>
+    <input type="text" id="lname3" name="lname3">
+  </form>
+</div>
+
+<h2>Borde en el input</h2>
+<div class="demo-borde">
+  <form action="#">
+    <label for="fname4">Nombre</label>
+    <input type="text" id="fname4" name="fname4">
+    <label for="lname4">Apellido</label>
+    <input type="text" id="lname4" name="lname4">
+  </form>
+</div>
+
+<h3>Solo borde inferior</h3>
+<div class="demo-borde-inferior">
+  <form action="#">
+    <label for="fname5">Nombre</label>
+    <input type="text" id="fname5" name="fname5">
+  </form>
+</div>
+
+<h2>Color de fondo y texto</h2>
+<div class="demo-color">
+  <form action="#">
+    <label for="fname6">Nombre</label>
+    <input type="text" id="fname6" name="fname6" value="Juan">
+    <label for="lname6">Apellido</label>
+    <input type="text" id="lname6" name="lname6" value="Pérez">
+  </form>
+</div>
+
+<h2>Estilo al enfocar (:focus)</h2>
+<p>Se puede quitar el contorno azul por defecto con outline:none y personalizar el estilo al hacer clic:</p>
+<div class="demo-focus">
+  <form action="#">
+    <label for="fname7">Nombre</label>
+    <input type="text" id="fname7" name="fname7" value="Juan">
+    <label for="lname7">Apellido</label>
+    <input type="text" id="lname7" name="lname7" value="Pérez">
+  </form>
+</div>
+
+<h3>Con borde animado (transition)</h3>
+<div class="demo-focus-borde">
+  <form action="#">
+    <label for="fname8">Nombre</label>
+    <input type="text" id="fname8" name="fname8" value="Juan">
+    <label for="lname8">Apellido</label>
+    <input type="text" id="lname8" name="lname8" value="Pérez">
+  </form>
+</div>
+
+<h2>Input con ícono</h2>
+<p>Se usa background-image y background-position, dejando espacio con padding-left:</p>
+<div class="demo-icono">
+  <form action="#">
+    <input type="text" name="search" placeholder="Buscar...">
+  </form>
+</div>
+
+<h3>Búsqueda animada (transition en el ancho)</h3>
+<div class="demo-animada">
+  <form action="#">
+    <input type="text" name="search" placeholder="Buscar...">
+  </form>
+</div>
+
+<h2>Elementos del formulario</h2>
+
+<h3>Estilizar textarea</h3>
+<p>Con resize: none se quita el "agarre" para redimensionar en la esquina inferior derecha:</p>
+<div class="demo-textarea">
+  <form action="#">
+    <textarea>Algo de texto...</textarea>
+  </form>
+</div>
+
+<h3>Estilizar un menú desplegable</h3>
+<div class="demo-dropdown-form">
+  <form action="#">
+    <select id="country2" name="country2">
+      <option value="mx">México</option>
+      <option value="gt">Guatemala</option>
+      <option value="co">Colombia</option>
+    </select>
+  </form>
+</div>
+
+<h3>Estilizar botones del formulario</h3>
+<div class="demo-botones">
+  <form action="#">
+    <input type="button" value="Botón">
+    <input type="reset" value="Restablecer">
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+<h2>Formulario responsivo</h2>
+<p>Con media queries, las etiquetas y campos se apilan verticalmente cuando la pantalla es menor a 600px. Cambia el tamaño de la ventana para ver el efecto:</p>
+<div class="responsive-form">
+  <form action="#">
+    <label for="fname9">Nombre:</label>
+    <input type="text" id="fname9" name="fname9" placeholder="Tu nombre">
+    <label for="lname9">Apellido:</label>
+    <input type="text" id="lname9" name="lname9" placeholder="Tu apellido">
+    <label for="country9">País:</label>
+    <select id="country9" name="country9">
+      <option value="mexico">México</option>
+      <option value="guatemala">Guatemala</option>
+      <option value="colombia">Colombia</option>
+    </select>
+    <label for="message9">Mensaje:</label>
+    <textarea id="message9" name="message9" placeholder="Escribe algo..."></textarea>
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+</body>
+</html>
