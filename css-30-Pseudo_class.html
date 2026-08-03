@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Pseudo-clases en CSS (Pseudo-classes)</title>
+<style>
+.demo-links a:link { color: red; }
+.demo-links a:visited { color: green; }
+.demo-links a:hover { color: hotpink; }
+.demo-links a:active { color: blue; }
+
+.demo-div-hover div {
+  background-color: green;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+.demo-div-hover div:hover {
+  background-color: blue;
+}
+
+.demo-focus input:focus {
+  background-color: yellow;
+}
+
+.demo-clase a.highlight:hover {
+  color: #ff0000;
+  font-size: 22px;
+}
+
+.demo-tooltip p {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+.demo-tooltip div:hover p {
+  display: block;
+}
+
+.demo-firstchild p:first-child {
+  color: blue;
+}
+
+.demo-em-firstchild p em:first-child {
+  color: blue;
+}
+
+.demo-p-firstchild-em p:first-child em {
+  color: blue;
+}
+
+.demo-lang q:lang(es) {
+  quotes: "«" "»";
+}
+</style>
+</head>
+<body>
+
+<h2>¿Qué es una pseudo-clase?</h2>
+<p>Es una palabra clave que se agrega a un selector para definir un estilo según un estado especial de un elemento. Se usa para: estilizar al pasar el mouse, diferenciar enlaces visitados/no visitados, estilizar al enfocar un campo, validar formularios, o seleccionar el primer hijo de un elemento.</p>
+<p>Sintaxis: <code>selector:nombre-pseudo-clase { propiedades }</code></p>
+<ul>
+  <li><b>Interactivas:</b> :hover, :focus, :active, :link, :visited</li>
+  <li><b>Estructurales:</b> :first-child, :last-child, :nth-child(n), :lang()</li>
+</ul>
+
+<h2>Pseudo-clases interactivas</h2>
+
+<h3>Pseudo-clases en enlaces</h3>
+<div class="demo-links">
+  <p><b><a href="#" target="_blank">Este es un enlace</a></b></p>
+</div>
+<p>Nota: a:hover debe ir después de a:link y a:visited; a:active debe ir después de a:hover, para que funcionen correctamente.</p>
+
+<h3>:hover en un div</h3>
+<div class="demo-div-hover">
+  <div>Pasa el mouse por aquí</div>
+</div>
+
+<h3>:focus en un input</h3>
+<div class="demo-focus">
+  <form action="#" method="get">
+    Nombre: <input type="text" name="fname"><br><br>
+    Apellido: <input type="text" name="lname"><br><br>
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+<h3>Pseudo-clases combinadas con clases HTML</h3>
+<div class="demo-clase">
+  <p>Al pasar el mouse sobre el primer enlace, cambiará de color y tamaño:</p>
+  <p><a class="highlight" href="#">Sintaxis CSS</a></p>
+  <p><a href="#">Tutorial CSS</a></p>
+</div>
+
+<h3>Tooltip simple con :hover</h3>
+<div class="demo-tooltip">
+  <div>Pasa el mouse sobre este div para mostrar el párrafo
+    <p>¡Tada! ¡Aquí estoy!</p>
+  </div>
+</div>
+
+<h2>Pseudo-clases estructurales</h2>
+
+<h3>:first-child - estilizar todos los primeros hijos &lt;p&gt;</h3>
+<div class="demo-firstchild">
+  <div>
+    <p>Este es un texto.</p>
+    <p>Este es un texto.</p>
+    <div>
+      <p>Este es un texto.</p>
+      <p>Este es un texto.</p>
+    </div>
+  </div>
+  <div>
+    <p>Este es un texto.</p>
+    <p>Este es un texto.</p>
+  </div>
+</div>
+
+<h3>Estilizar el primer &lt;em&gt; dentro de cada &lt;p&gt;</h3>
+<div class="demo-em-firstchild">
+  <p>Soy una persona <em>fuerte</em>. Soy una persona <em>fuerte</em>.</p>
+  <p>Soy una persona <em>fuerte</em>. Soy una persona <em>fuerte</em>.</p>
+</div>
+
+<h3>Estilizar &lt;em&gt; dentro de &lt;p&gt; que son primer hijo</h3>
+<div class="demo-p-firstchild-em">
+  <p>Soy una persona <em>fuerte</em>. Soy una persona <em>fuerte</em>.</p>
+  <p>Soy una persona <em>fuerte</em>. Soy una persona <em>fuerte</em>.</p>
+  <div>
+    <p>Soy una persona <em>fuerte</em>. Soy una persona <em>fuerte</em>.</p>
+    <p>Soy una persona <em>fuerte</em>. Soy una persona <em>fuerte</em>.</p>
+  </div>
+</div>
+
+<h3>:lang() - comillas según el idioma</h3>
+<div class="demo-lang">
+  <p>Algún texto <q lang="es">Una cita dentro de un párrafo</q> algún texto.</p>
+</div>
+
+</body>
+</html>
