@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>La Propiedad float en CSS</title>
+<style>
+/* --- float: right --- */
+.demo-right img {
+  float: right;
+  margin-left: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+/* --- float: left --- */
+.demo-left img {
+  float: left;
+  margin-right: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+/* --- float: none --- */
+.demo-none img {
+  float: none;
+  width: 150px;
+  height: 150px;
+}
+
+/* --- divs flotando uno junto al otro --- */
+.demo-juntos div {
+  float: left;
+  padding: 15px;
+}
+.demo-juntos .div1 { background: red; color:white; }
+.demo-juntos .div2 { background: yellow; }
+.demo-juntos .div3 { background: green; color:white; }
+.demo-juntos::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* --- clear --- */
+.demo-clear .div1 {
+  float: left;
+  padding: 10px;
+  border: 3px solid green;
+}
+.demo-clear .div2 {
+  padding: 10px;
+  border: 3px solid red;
+  width: 200px;
+}
+.demo-clear .div3 {
+  float: left;
+  padding: 10px;
+  border: 3px solid green;
+}
+.demo-clear .div4 {
+  padding: 10px;
+  border: 3px solid red;
+  width: 200px;
+  clear: left;
+}
+.demo-clear::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* --- clearfix hack --- */
+.demo-clearfix div {
+  border: 3px solid green;
+  padding: 10px;
+}
+.img1 { float: right; }
+.img2 { float: right; }
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* --- cajas de igual ancho --- */
+* { box-sizing: border-box; }
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 30px;
+}
+
+/* --- imágenes lado a lado --- */
+.img-container {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* --- cajas de igual altura (fijo) --- */
+.box-alto {
+  float: left;
+  width: 50%;
+  padding: 30px;
+  height: 200px;
+}
+
+/* --- flexbox --- */
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+.flex-container .box-flex {
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 24px;
+}
+</style>
+</head>
+<body>
+
+<h2>La propiedad float</h2>
+<p>Especifica cómo debe flotar un elemento dentro de su contenedor, colocándolo a la izquierda o derecha y permitiendo que el texto lo rodee. Valores: left, right, none (por defecto), inherit. Se usa mucho para que el texto rodee imágenes.</p>
+
+<h3>float: right</h3>
+<div class="demo-right">
+  <img src="https://www.w3schools.com/css/img_pineapple.jpg" alt="Piña">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+  <div style="clear:both;"></div>
+</div>
+
+<h3>float: left</h3>
+<div class="demo-left">
+  <img src="https://www.w3schools.com/css/img_pineapple.jpg" alt="Piña">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+  <div style="clear:both;"></div>
+</div>
+
+<h3>float: none</h3>
+<div class="demo-none">
+  <img src="https://www.w3schools.com/css/img_pineapple.jpg" alt="Piña">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.
+</div>
+
+<h2>Divs flotando uno junto al otro</h2>
+<p>Los &lt;div&gt; son elementos de bloque y normalmente inician en una nueva línea, pero con float: left se pueden acomodar uno junto al otro:</p>
+<div class="demo-juntos">
+  <div class="div1">Div 1</div>
+  <div class="div2">Div 2</div>
+  <div class="div3">Div 3</div>
+</div>
+
+<h2>La propiedad clear</h2>
+<p>Especifica qué pasa con el elemento que sigue a uno flotante. Evita que el contenido rodee un elemento flotado. Valores: none (por defecto), left, right, both, inherit.</p>
+
+<h3>Sin clear</h3>
+<div class="demo-clear">
+  <div class="div1">div1</div>
+  <div class="div2">div2 - Aunque va después de div1 en el código, como no tiene clear, el texto flota alrededor de div1.</div>
+  <h3>Con clear: left</h3>
+  <div class="div3">div3</div>
+  <div class="div4">div4 - Aquí, clear: left empuja este div hacia abajo, debajo del div3 flotante.</div>
+</div>
+
+<h2>El truco Clearfix</h2>
+<p>Si un elemento flotante es más alto que su contenedor, se desborda fuera de él. El clearfix (usando el pseudo-elemento ::after) soluciona esto:</p>
+
+<h3>Sin clearfix</h3>
+<p>La imagen flota a la derecha y es más alta que el contenedor, así que se desborda:</p>
+<div class="demo-clearfix">
+  <div>
+    <img class="img1" src="https://www.w3schools.com/css/img_pineapple.jpg" alt="Piña" width="120" height="120">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+  </div>
+</div>
+
+<h3>Usando el truco clearfix</h3>
+<div class="demo-clearfix">
+  <div class="clearfix">
+    <img class="img2" src="https://www.w3schools.com/css/img_pineapple.jpg" alt="Piña" width="120" height="120">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+  </div>
+</div>
+<p>Explicación: <code>.clearfix::after</code> apunta a un pseudo-elemento generado después del contenido; <code>content: ""</code> asegura que se renderice aunque no tenga contenido visible; <code>clear: both</code> limpia los flotantes de ambos lados; <code>display: table</code> crea un nuevo contexto de formato de bloque.</p>
+
+<h2>Cajas de igual ancho</h2>
+<p>Con float es fácil poner cajas de contenido lado a lado:</p>
+<div class="clearfix">
+  <div class="box" style="background-color:#bbb"><p>Contenido dentro de la caja 1.</p></div>
+  <div class="box" style="background-color:#ccc"><p>Contenido dentro de la caja 2.</p></div>
+  <div class="box" style="background-color:#ddd"><p>Contenido dentro de la caja 3.</p></div>
+</div>
+<p>Se usa el truco clearfix para el flujo del layout, y box-sizing para que el padding no rompa el ancho de las cajas.</p>
+
+<h2>Imágenes lado a lado</h2>
+<div class="clearfix">
+  <div class="img-container"><img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Italia" style="width:100%"></div>
+  <div class="img-container"><img src="https://www.w3schools.com/css/img_forest.jpg" alt="Bosque" style="width:100%"></div>
+  <div class="img-container"><img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Montañas" style="width:100%"></div>
+</div>
+
+<h2>Cajas con la misma altura (fija)</h2>
+<p>Fijar una altura funciona solo si el contenido es parecido en ambas cajas; en pantallas pequeñas o con contenido variable puede romperse:</p>
+<div class="clearfix">
+  <div class="box-alto" style="background-color:#bbb">
+    <h3>Caja 1</h3>
+    <p>Algo de contenido, algo de contenido.</p>
+  </div>
+  <div class="box-alto" style="background-color:#ccc">
+    <h3>Caja 2</h3>
+    <p>Algo de contenido, algo de contenido, algo de contenido, algo de contenido, algo de contenido.</p>
+  </div>
+</div>
+
+<h2>Solución flexible con Flexbox</h2>
+<p>Flexbox ajusta automáticamente la altura de las cajas para que coincidan con la más alta, sin necesitar una altura fija:</p>
+<div class="flex-container">
+  <div class="box-flex">Caja 1 - Este es un texto para asegurar que el contenido sea bastante alto. Este es un texto para asegurar que el contenido sea bastante alto.</div>
+  <div class="box-flex">Caja 2 - Mi altura seguirá a la Caja 1.</div>
+</div>
+<p>Cambia el tamaño de la ventana del navegador para ver el diseño flexible.</p>
+
+</body>
+</html>
