@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>display: inline-block en CSS</title>
+<style>
+span.a {
+  display: inline;
+  padding: 5px;
+  border: 2px solid red;
+}
+span.b {
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  padding: 5px;
+  border: 2px solid red;
+}
+span.c {
+  display: block;
+  width: 100px;
+  height: 35px;
+  padding: 5px;
+  border: 2px solid red;
+}
+
+.nav {
+  background-color: lightgray;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  display: inline-block;
+  font-size: 18px;
+  padding: 15px;
+}
+</style>
+</head>
+<body>
+
+<h2>display: inline-block</h2>
+<p>Combina las características de los elementos inline y block: aparece en la misma línea que otros elementos inline o inline-block, pero permite definir width, height, margin-top y margin-bottom (como los elementos de bloque).</p>
+
+<h3>display: inline (comportamiento por defecto de span)</h3>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. <span class="a">Aliquam</span> <span class="a">venenatis</span> gravida nisl sit amet facilisis.</div>
+
+<h3>display: inline-block</h3>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. <span class="b">Aliquam</span> <span class="b">venenatis</span> gravida nisl sit amet facilisis.</div>
+
+<h3>display: block</h3>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. <span class="c">Aliquam</span> <span class="c">venenatis</span> gravida nisl sit amet facilisis.</div>
+
+<h2>Crear un menú de navegación horizontal</h2>
+<p>Un uso común de display: inline-block es mostrar elementos de lista horizontalmente en vez de verticalmente:</p>
+<p>Los elementos de lista se muestran verticalmente por defecto. Aquí usamos display: inline-block para mostrarlos uno junto al otro:</p>
+<ul class="nav">
+  <li><a href="#inicio">Inicio</a></li>
+  <li><a href="#nosotros">Sobre Nosotros</a></li>
+  <li><a href="#clientes">Nuestros Clientes</a></li>
+  <li><a href="#contacto">Contáctanos</a></li>
+</ul>
+
+</body>
+</html>
